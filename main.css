@@ -1,3 +1,5 @@
+/* Reset */
+
 html, body, section, article,
 h1, h2, p, strong, em, a, ul {
   margin: 0;
@@ -13,7 +15,7 @@ h1, h2, p, strong, em, a, ul {
   font-size: 16px;
 }
 
-
+/* Layout */
 
 .main-title {
   float: right;
@@ -34,7 +36,7 @@ h1, h2, p, strong, em, a, ul {
   position: relative;
   margin: 0px;
   background: #00CC99;
-  height: 300px;
+  height: 400px;
 }
 
 .navbar {
@@ -47,19 +49,83 @@ h1, h2, p, strong, em, a, ul {
 
 .top-menu-left {
   list-style: none;
-  margin-left: 30px;
-  float: left;
+  margin: auto;
+  position: absolute;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, 0%)
 }
 
 .top-menu-left li {
   display: inline;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
   font-size: 16px;
 }
 
 .main {
   width: 700px;
+  height: 700px;
   margin: auto;
   margin-top: 50px;
+}
+
+.about {
+  width: 300px;
+  margin: auto;
+}
+
+.header {
+  font-family: 'Pacifico', cursive;
+  font-size: 48px;
+  text-align: center;
+}
+
+.header:hover {
+  color: #2F4F4F;
+}
+
+.about-text {
+  padding-top: 20px;
+  text-align: center;
+}
+/*Images*/
+
+
+
+
+
+.circular {
+  margin: auto;
+	width: 300px;
+	height: 300px;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	background: url('images/tinyprofile.jpg') no-repeat;
+  overflow: hidden;
+	}
+
+.overlay {
+  background: #00CC99;
+  opacity:0;
+  -webkit-transition: opacity .25s ease;
+  -moz-transition: opacity .25s ease;
+  border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+  width: 300px;
+  height: 300px;
+  line-height: 300px;
+}
+
+.img-links {
+  margin: 50%;
+  color: white;
+  left: 50%;
+  /*transform: translate(-50%, 0%);*/
+}
+
+.overlay:hover {
+  opacity:.5;
 }
