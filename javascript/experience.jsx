@@ -1,4 +1,6 @@
 const React = require('react');
+const PDF = require('react-pdf');
+const sampleText = require('./sampleText');
 
 module.exports = React.createClass({
   getInitialState () {
@@ -14,7 +16,13 @@ module.exports = React.createClass({
   },
 
   activeContent () {
-    return this.state.active;
+    if (this.state.active == 'resume') {
+      return (
+        <PDF file="assets/BrookeAngel.pdf"
+              loading={<div className="loader">Loading...</div>}/>);
+    } else {
+      return sampleText[this.state.active];
+    }
   },
 
   render () {

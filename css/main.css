@@ -11,7 +11,7 @@ h1, h2, p, strong, em, a, ul, main, nav {
   text-align: inherit;
   color: inherit;
   background: transparent;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   font-size: 16px;
 }
 
@@ -50,7 +50,6 @@ a {
   align-items: center;
   justify-content: space-between;
   padding: 10px 30px;
-  /*border-bottom: 1px solid black;*/
 }
 
 .main-nav a:hover {
@@ -72,6 +71,7 @@ a {
   position: fixed;
   z-index: 10;
   left: 75px;
+  margin-top: -75px;
   align-items: center;
 }
 
@@ -201,17 +201,10 @@ a {
   box-sizing: border-box;
   border-top: 1px solid black;
   height: 400px;
+  overflow-y: scroll;
 }
 
 /* Projects */
 
-#projects {
-  border: 1px solid black;
-}
-
 
 /* Causes */
-
-#causes {
-  border: 1px solid black;
-}

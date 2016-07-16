@@ -3,6 +3,7 @@ const React = require('react');
 const MainNav = require('./main_nav');
 const PointNav = require('./point_nav');
 const Experience = require('./experience');
+const Projects = require('./projects');
 
 const App = React.createClass({
 
@@ -54,7 +55,7 @@ const App = React.createClass({
         <div>
         <section id="main-banner">
           <div className="main-description">
-            <h1>Brooke Angel</h1>
+            <h1>BROOKE ANGEL</h1>
             <div>Giant tree. Developer. Goddess of debugging.</div>
           </div>
           <div className="down-arrow" onClick={this.downArrowClick}>
@@ -67,7 +68,7 @@ const App = React.createClass({
         </section>
 
         <section id="projects">
-          projects
+          <Projects />
         </section>
 
         <section id="causes">
