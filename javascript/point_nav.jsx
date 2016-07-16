@@ -12,7 +12,7 @@ module.exports = React.createClass({
             <p>Home</p>
           </a>
           <a onClick={this.props.setScrollState}>
-            <i className="fa fa-folder fa-2x"></i>
+            <i className="fa fa-file-text fa-2x"></i>
             <p>Experience</p>
           </a>
 
@@ -22,8 +22,8 @@ module.exports = React.createClass({
           </a>
 
           <a onClick={this.props.setScrollState}>
-            <i className="fa fa-heart fa-2x"></i>
-            <p>Causes</p>
+            <i className="fa fa-phone fa-2x"></i>
+            <p>Contact</p>
           </a>
         </nav>
       </div>

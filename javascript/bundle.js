@@ -52,6 +52,7 @@
 	var PointNav = __webpack_require__(173);
 	var Experience = __webpack_require__(174);
 	var Projects = __webpack_require__(177);
+	var Contact = __webpack_require__(178);
 	
 	var App = React.createClass({
 	  displayName: 'App',
@@ -140,7 +141,7 @@
 	        React.createElement(
 	          'section',
 	          { id: 'causes' },
-	          'causes'
+	          React.createElement(Contact, null)
 	        )
 	      )
 	    );
@@ -21263,7 +21264,7 @@
 	        React.createElement(
 	          "a",
 	          { onClick: this.props.setScrollState },
-	          React.createElement("i", { className: "fa fa-folder fa-2x" }),
+	          React.createElement("i", { className: "fa fa-file-text fa-2x" }),
 	          React.createElement(
 	            "p",
 	            null,
@@ -21283,11 +21284,11 @@
 	        React.createElement(
 	          "a",
 	          { onClick: this.props.setScrollState },
-	          React.createElement("i", { className: "fa fa-heart fa-2x" }),
+	          React.createElement("i", { className: "fa fa-phone fa-2x" }),
 	          React.createElement(
 	            "p",
 	            null,
-	            "Causes"
+	            "Contact"
 	          )
 	        )
 	      )
@@ -21491,29 +21492,162 @@
 /* 176 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 	
 	module.exports = {
-	  summary: "Put a bird on it VHS irony whatever PBR&B ramps fingerstache. Mlkshk man braid freegan beard austin pug, cornhole leggings. Viral pitchfork hashtag, vice artisan etsy tattooed. Gluten-free pabst selfies 8-bit. Taxidermy master cleanse trust fund chambray put a bird on it, ethical tattooed sustainable celiac. Narwhal YOLO fashion axe single-origin coffee poutine mixtape, selvage echo park bespoke cred. Ethical offal gochujang, truffaut twee drinking vinegar kogi cardigan deep v master cleanse food truck +1.\n\n            Ramps shoreditch narwhal, XOXO listicle 3 wolf moon synth neutra tousled jean shorts kale chips truffaut. Shoreditch crucifix pour-over, gochujang man braid letterpress asymmetrical roof party next level taxidermy chicharrones organic church-key. Neutra XOXO literally cred four dollar toast. Church-key ugh DIY kinfolk marfa. Flannel seitan +1, banjo fap gentrify franzen gluten-free lo-fi. Normcore synth kale chips pinterest. Keffiyeh godard street art, mumblecore pinterest normcore 8-bit fanny pack kitsch salvia dreamcatcher chambray swag roof party.",
-	  teaching: "Ramps shoreditch narwhal, XOXO listicle 3 wolf moon synth neutra tousled jean shorts kale chips truffaut. Shoreditch crucifix pour-over, gochujang man braid letterpress asymmetrical roof party next level taxidermy chicharrones organic church-key. Neutra XOXO literally cred four dollar toast. Church-key ugh DIY kinfolk marfa. Flannel seitan +1, banjo fap gentrify franzen gluten-free lo-fi. Normcore synth kale chips pinterest. Keffiyeh godard street art, mumblecore pinterest normcore 8-bit fanny pack kitsch salvia dreamcatcher chambray swag roof party.",
-	  technologies: "Affogato beard you probably haven't heard of them, fashion axe ramps flexitarian marfa tousled. Shoreditch plaid godard keytar before they sold out normcore. Irony retro kinfolk, letterpress cronut scenester quinoa thundercats tacos plaid pickled gentrify. Chambray ethical mixtape four dollar toast fap waistcoat, post-ironic gochujang mustache roof party. Organic freegan keffiyeh bushwick listicle. Locavore gentrify listicle shabby chic. Lo-fi kinfolk distillery twee gluten-free williamsburg."
+	  summary: 'Put a bird on it VHS irony whatever PBR&B ramps fingerstache. Mlkshk man braid freegan beard austin pug, cornhole leggings. Viral pitchfork hashtag, vice artisan etsy tattooed. Gluten-free pabst selfies 8-bit. Taxidermy master cleanse trust fund chambray put a bird on it, ethical tattooed sustainable celiac. Narwhal YOLO fashion axe single-origin coffee poutine mixtape, selvage echo park bespoke cred. Ethical offal gochujang, truffaut twee drinking vinegar kogi cardigan deep v master cleanse food truck +1.\n\n            Ramps shoreditch narwhal, XOXO listicle 3 wolf moon synth neutra tousled jean shorts kale chips truffaut. Shoreditch crucifix pour-over, gochujang man braid letterpress asymmetrical roof party next level taxidermy chicharrones organic church-key. Neutra XOXO literally cred four dollar toast. Church-key ugh DIY kinfolk marfa. Flannel seitan +1, banjo fap gentrify franzen gluten-free lo-fi. Normcore synth kale chips pinterest. Keffiyeh godard street art, mumblecore pinterest normcore 8-bit fanny pack kitsch salvia dreamcatcher chambray swag roof party.',
+	  teaching: 'Ramps shoreditch narwhal, XOXO listicle 3 wolf moon synth neutra tousled jean shorts kale chips truffaut. Shoreditch crucifix pour-over, gochujang man braid letterpress asymmetrical roof party next level taxidermy chicharrones organic church-key. Neutra XOXO literally cred four dollar toast. Church-key ugh DIY kinfolk marfa. Flannel seitan +1, banjo fap gentrify franzen gluten-free lo-fi. Normcore synth kale chips pinterest. Keffiyeh godard street art, mumblecore pinterest normcore 8-bit fanny pack kitsch salvia dreamcatcher chambray swag roof party.',
+	  technologies: 'Affogato beard you probably haven\'t heard of them, fashion axe ramps flexitarian marfa tousled. Shoreditch plaid godard keytar before they sold out normcore. Irony retro kinfolk, letterpress cronut scenester quinoa thundercats tacos plaid pickled gentrify. Chambray ethical mixtape four dollar toast fap waistcoat, post-ironic gochujang mustache roof party. Organic freegan keffiyeh bushwick listicle. Locavore gentrify listicle shabby chic. Lo-fi kinfolk distillery twee gluten-free williamsburg.',
+	  project1: 'this is info about project 1',
+	  project2: 'this is info about project 2',
+	  project3: 'this is info about project 3',
+	  project4: 'this is info about project 4',
+	  profileDescription: '\n  Hi there! I hope you enjoyed my site. My name is Brooke and I love coding. Please\n  feel free to reach out to me at blah@blah.blah.\n  '
 	};
 
 /***/ },
 /* 177 */
 /***/ function(module, exports, __webpack_require__) {
 
+	"use strict";
+	
+	var React = __webpack_require__(166);
+	var sampleText = __webpack_require__(176);
+	
+	module.exports = React.createClass({
+	  displayName: "exports",
+	  getInitialState: function getInitialState() {
+	    return { focused: 0 };
+	  },
+	  componentDidMount: function componentDidMount() {
+	    this.resumeInterval();
+	  },
+	  arrestInterval: function arrestInterval() {
+	    clearInterval(this.interval);
+	  },
+	  resumeInterval: function resumeInterval() {
+	    var _this = this;
+	
+	    this.interval = setInterval(function () {
+	      return _this.onRightArrow();
+	    }, 3000);
+	  },
+	  componentWillUnmount: function componentWillUnmount() {
+	    this.arrestInterval;
+	  },
+	  onRightArrow: function onRightArrow() {
+	    this.setState({ focused: (this.state.focused + 1) % 4 });
+	  },
+	  onLeftArrow: function onLeftArrow() {
+	    this.setState({ focused: (this.state.focused - 1 + 4) % 4 });
+	  },
+	  getSliderStyle: function getSliderStyle() {
+	    return { marginLeft: -(this.state.focused * 700) };
+	  },
+	  render: function render() {
+	    var _this2 = this;
+	
+	    return React.createElement(
+	      "div",
+	      null,
+	      React.createElement(
+	        "div",
+	        { className: "project-container-container" },
+	        React.createElement("i", { className: "fa fa-chevron-left fa-4x", onClick: this.onLeftArrow }),
+	        React.createElement(
+	          "div",
+	          { className: "project-container" },
+	          React.createElement(
+	            "div",
+	            { className: "project-slider",
+	              onMouseEnter: this.arrestInterval,
+	              onMouseLeave: this.resumeInterval,
+	              style: this.getSliderStyle() },
+	            React.createElement(
+	              "div",
+	              { className: "project" },
+	              React.createElement(
+	                "div",
+	                { className: "project-overlay" },
+	                sampleText.project1
+	              )
+	            ),
+	            React.createElement(
+	              "div",
+	              { className: "project" },
+	              React.createElement(
+	                "div",
+	                { className: "project-overlay" },
+	                sampleText.project2
+	              )
+	            ),
+	            React.createElement(
+	              "div",
+	              { className: "project" },
+	              React.createElement(
+	                "div",
+	                { className: "project-overlay" },
+	                sampleText.project3
+	              )
+	            ),
+	            React.createElement(
+	              "div",
+	              { className: "project" },
+	              React.createElement(
+	                "div",
+	                { className: "project-overlay" },
+	                sampleText.project4
+	              )
+	            )
+	          )
+	        ),
+	        React.createElement("i", { className: "fa fa-chevron-right fa-4x", onClick: this.onRightArrow })
+	      ),
+	      React.createElement(
+	        "div",
+	        { className: "project-nav" },
+	        React.createElement("div", { className: this.state.focused == 0 ? 'project-nav-button active' : 'project-nav-button',
+	          onClick: function onClick() {
+	            return _this2.setState({ focused: 0 });
+	          } }),
+	        React.createElement("div", { className: this.state.focused == 1 ? 'project-nav-button active' : 'project-nav-button',
+	          onClick: function onClick() {
+	            return _this2.setState({ focused: 1 });
+	          } }),
+	        React.createElement("div", { className: this.state.focused == 2 ? 'project-nav-button active' : 'project-nav-button',
+	          onClick: function onClick() {
+	            return _this2.setState({ focused: 2 });
+	          } }),
+	        React.createElement("div", { className: this.state.focused == 3 ? 'project-nav-button active' : 'project-nav-button',
+	          onClick: function onClick() {
+	            return _this2.setState({ focused: 3 });
+	          } })
+	      )
+	    );
+	  }
+	});
+
+/***/ },
+/* 178 */
+/***/ function(module, exports, __webpack_require__) {
+
 	'use strict';
 	
 	var React = __webpack_require__(166);
+	var sampleText = __webpack_require__(176);
 	
 	module.exports = React.createClass({
 	  displayName: 'exports',
 	  render: function render() {
 	    return React.createElement(
 	      'div',
-	      null,
-	      'Projects'
+	      { className: 'contact-container' },
+	      React.createElement('div', { className: 'profile-pic' }),
+	      React.createElement(
+	        'div',
+	        { className: 'profile-description' },
+	        sampleText.profileDescription
+	      )
 	    );
 	  }
 	});

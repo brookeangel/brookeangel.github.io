@@ -4,6 +4,7 @@ const MainNav = require('./main_nav');
 const PointNav = require('./point_nav');
 const Experience = require('./experience');
 const Projects = require('./projects');
+const Contact = require('./contact');
 
 const App = React.createClass({
 
@@ -72,7 +73,7 @@ const App = React.createClass({
         </section>
 
         <section id="causes">
-          causes
+          <Contact />
         </section>
         </div>
       </main>

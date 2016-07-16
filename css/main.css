@@ -206,5 +206,107 @@ a {
 
 /* Projects */
 
+.project-container-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-container-container i {
+  cursor: pointer;
+  color: black;
+  transition: color 0.5s;
+}
+
+.project-container-container i:hover {
+  color: grey;
+  transition: color 0.5s;
+}
+
+.project-container {
+  height: 500px;
+  width: 700px;
+  margin: 50px;
+  overflow: hidden;
+}
+
+.project-slider {
+  margin-left: 0;
+  transition: margin-left 0.5s linear;
+  position: relative;
+  width: 2800px;
+}
+
+.project {
+  background-image: url('http://placecorgi.com/700/500');
+  background-size: cover;
+  height: 500px;
+  width: 700px;
+  display: inline-block;
+}
+
+.project-nav {
+  display: flex;
+  width: 300px;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+}
+
+.project-nav-button {
+  width: 15px;
+  height: 15px;
+  border: 2px solid black;
+  border-radius: 15px;
+  cursor: pointer;
+  background-color: white;
+  transition: background-color 0.5s;
+}
+
+.project-nav-button:hover {
+  background-color: aquamarine;
+}
+
+.project-nav-button.active {
+  background-color: black;
+}
+
+.project-overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0s linear 0.25s, opacity 1s linear;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project:hover .project-overlay {
+  opacity: 1;
+  visibility: visible;
+  transition: visibility 0s linear 0.25s, opacity 1s linear;
+}
 
 /* Causes */
+
+.profile-pic {
+  width: 300px;
+  height: 300px;
+  border-radius: 300px;
+  background-image: url('../images/tinyprofile.jpg');
+  background-size: cover;
+  margin: 25px;
+}
+
+.profile-description {
+  width: 300px;
+  font-size: 18px;
+  margin: 25px;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+}
