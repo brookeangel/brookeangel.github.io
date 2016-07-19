@@ -22,7 +22,7 @@ body {
 }
 
 section {
-  height: calc(100vh - 75px);
+  min-height: calc(100vh - 75px);
   width: 100vw;
   margin-top: 70px;
   display: flex;
@@ -32,6 +32,10 @@ section {
 
 h1 {
   font-size: 80px;
+}
+
+h2 {
+  font-size: 50px;
 }
 
 a {
@@ -106,7 +110,7 @@ a {
   margin-left: -5px;
 }
 
-.point-nav-buttons a:hover {
+.point-nav-buttons a:hover, .point-nav-buttons a.active {
   background-color: black;
   transition: background-color 0.5s linear;
   color: white;
@@ -142,6 +146,8 @@ a {
 .down-arrow {
   position: relative;
   cursor: pointer;
+  width: 54px;
+  height: 54px;
 }
 
 .down-arrow a {
@@ -159,7 +165,8 @@ a {
 /* Experience */
 
 .experience {
-  width: 800px;
+  width: 80vw;
+  max-width: 800px;
 }
 
 .experience-circles {
@@ -169,10 +176,15 @@ a {
 
 .circle {
   background-image: url('http://placecorgi.com/150/150');
-  height: 150px;
-  width: 150px;
-  border-radius: 150px;
+  height: 15vw;
+  width: 15vw;
+  max-height: 150px;
+  max-width: 150px;
+  min-height: 125px;
+  min-width: 125px;
+  border-radius: 15vw;
   overflow: hidden;
+  background-size: cover;
 }
 
 .circle-overlay {
@@ -200,8 +212,10 @@ a {
   padding: 50px;
   box-sizing: border-box;
   border-top: 1px solid black;
-  height: 400px;
+  height: 45vh;
   overflow-y: scroll;
+  white-space: pre-wrap;
+  font: inherit;
 }
 
 /* Projects */
@@ -210,6 +224,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 80vw;
 }
 
 .project-container-container i {
@@ -224,9 +239,10 @@ a {
 }
 
 .project-container {
-  height: 500px;
-  width: 700px;
-  margin: 50px;
+  height: 65vh;
+  min-height: 350px;
+  width: 62vw;
+  margin: 30px;
   overflow: hidden;
 }
 
@@ -234,14 +250,15 @@ a {
   margin-left: 0;
   transition: margin-left 0.5s linear;
   position: relative;
-  width: 2800px;
+  width: 320vw;
 }
 
 .project {
   background-image: url('http://placecorgi.com/700/500');
   background-size: cover;
-  height: 500px;
-  width: 700px;
+  height: 65vh;
+  min-height: 350px;
+  width: 62vw;
   display: inline-block;
 }
 
@@ -292,21 +309,135 @@ a {
 /* Causes */
 
 .profile-pic {
-  width: 300px;
-  height: 300px;
-  border-radius: 300px;
-  background-image: url('../images/tinyprofile.jpg');
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../images/profile.jpg');
   background-size: cover;
-  margin: 25px;
-}
-
-.profile-description {
-  width: 300px;
-  font-size: 18px;
-  margin: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .contact-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-description {
+  margin: 70px 20px;
+  word-break: break-all;
+}
+
+.up-arrow {
+  position: relative;
+  cursor: pointer;
+  z-index: 1;
+  width: 54px;
+  height: 54px;
+}
+
+.up-arrow a {
+  position: absolute;
+  top: 0px;
+  transition:top 0.10s linear;
+}
+
+.up-arrow a:hover {
+  top: -10px;
+  transition:top 0.10s linear;
+}
+
+@media (max-width: 950px) {
+
+  h1 {
+    font-size: 60px;
+    text-align: center;
+  }
+
+  .point-nav {
+    left: 40px;
+  }
+}
+
+@media (max-width: 680px) {
+  .main-nav > a {
+    display: none;
+  }
+
+  .nav-buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .point-nav {
+    display: none;
+  }
+
+  .main-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .experience {
+    width: 100vw;
+  }
+
+  .experience-circles {
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+
+  .circle {
+    border-radius: 0px;
+    width: 100%;
+    height: auto;
+    min-height: 0px;
+    max-height: none;
+    min-width: none;
+    max-width: none;
+  }
+
+  .circle-overlay {
+    padding: 15px;
+  }
+
+  .experience-content {
+    margin: 0;
+    border: 0px;
+    padding: 25px;
+    height: auto;
+  }
+
+  .experience-content canvas {
+    width: 90vw !important;
+  }
+
+  .mobile-disappear {
+    display: none;
+  }
+
+  .project-container-container {
+    width: 100vw;
+  }
+
+  .project-container {
+    height: auto;
+    width: 100%;
+    margin: 0;
+  }
+
+  .project-slider {
+    width: 100%;
+
+  }
+
+  .project {
+    width: 100%;
+  }
 }

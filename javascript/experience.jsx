@@ -31,7 +31,7 @@ module.exports = React.createClass({
         <div className="experience-circles">
           <div className="circle" onClick={this.setActive.bind(null, 'summary')}>
             <div className={"circle-overlay " + this.isActive('summary')}>
-              SUMMARY
+              ABOUT ME
             </div>
           </div>
           <div className="circle" onClick={this.setActive.bind(null, 'resume')}>
@@ -50,9 +50,9 @@ module.exports = React.createClass({
             </div>
           </div>
         </div>
-        <div className="experience-content">
+        <pre className="experience-content">
           {this.activeContent()}
-        </div>
+        </pre>
       </div>
     );
   }

@@ -7,6 +7,16 @@ const Projects = require('./projects');
 const Contact = require('./contact');
 
 const App = React.createClass({
+  getInitialState () {
+    return {scrollState: 0};
+  },
+
+  componentDidMount () {
+    document.addEventListener('scroll', () => {
+      let newScrollState = Math.round(window.scrollY / window.innerHeight);
+      this.setState({scrollState: newScrollState});
+    });
+  },
 
   setScrollState (e) {
     let siblings = e.currentTarget.parentElement.children;
@@ -15,13 +25,15 @@ const App = React.createClass({
   },
 
   downArrowClick () {
-    this.setState({scrollState: 1});
     this.scrollTo(1);
+  },
+
+  upArrowClick () {
+    this.scrollTo(0);
   },
 
   mainLogoClick (e) {
     e.preventDefault();
-    this.setState({scrollState: 0});
     this.scrollTo(0);
   },
 
@@ -52,7 +64,8 @@ const App = React.createClass({
     return(
       <main>
         <MainNav mainLogoClick={this.mainLogoClick} />
-        <PointNav setScrollState={this.setScrollState} />
+        <PointNav setScrollState={this.setScrollState}
+                  scrollState={this.state.scrollState}/>
         <div>
         <section id="main-banner">
           <div className="main-description">
@@ -73,7 +86,7 @@ const App = React.createClass({
         </section>
 
         <section id="causes">
-          <Contact />
+          <Contact upArrowClick={this.upArrowClick}/>
         </section>
         </div>
       </main>

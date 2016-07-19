@@ -56,22 +56,34 @@
 	
 	var App = React.createClass({
 	  displayName: 'App',
+	  getInitialState: function getInitialState() {
+	    return { scrollState: 0 };
+	  },
+	  componentDidMount: function componentDidMount() {
+	    var _this = this;
+	
+	    document.addEventListener('scroll', function () {
+	      var newScrollState = Math.round(window.scrollY / window.innerHeight);
+	      _this.setState({ scrollState: newScrollState });
+	    });
+	  },
 	  setScrollState: function setScrollState(e) {
 	    var siblings = e.currentTarget.parentElement.children;
 	    var current = Array.from(siblings).indexOf(e.currentTarget);
 	    this.scrollTo(current);
 	  },
 	  downArrowClick: function downArrowClick() {
-	    this.setState({ scrollState: 1 });
 	    this.scrollTo(1);
+	  },
+	  upArrowClick: function upArrowClick() {
+	    this.scrollTo(0);
 	  },
 	  mainLogoClick: function mainLogoClick(e) {
 	    e.preventDefault();
-	    this.setState({ scrollState: 0 });
 	    this.scrollTo(0);
 	  },
 	  scrollTo: function scrollTo(current) {
-	    var _this = this;
+	    var _this2 = this;
 	
 	    var scrollHeight = current * window.innerHeight;
 	    clearInterval(this.scrollInterval);
@@ -85,7 +97,7 @@
 	        var newY = window.scrollY + diff;
 	        window.scrollTo(0, newY);
 	      } else {
-	        clearInterval(_this.scrollInterval);
+	        clearInterval(_this2.scrollInterval);
 	      }
 	    }, 1);
 	  },
@@ -97,7 +109,8 @@
 	      'main',
 	      null,
 	      React.createElement(MainNav, { mainLogoClick: this.mainLogoClick }),
-	      React.createElement(PointNav, { setScrollState: this.setScrollState }),
+	      React.createElement(PointNav, { setScrollState: this.setScrollState,
+	        scrollState: this.state.scrollState }),
 	      React.createElement(
 	        'div',
 	        null,
@@ -141,7 +154,7 @@
 	        React.createElement(
 	          'section',
 	          { id: 'causes' },
-	          React.createElement(Contact, null)
+	          React.createElement(Contact, { upArrowClick: this.upArrowClick })
 	        )
 	      )
 	    );
@@ -21253,7 +21266,8 @@
 	        { className: "point-nav-buttons" },
 	        React.createElement(
 	          "a",
-	          { onClick: this.props.setScrollState },
+	          { onClick: this.props.setScrollState,
+	            className: this.props.scrollState == 0 ? 'active' : '' },
 	          React.createElement("i", { className: "fa fa-home fa-2x" }),
 	          React.createElement(
 	            "p",
@@ -21263,7 +21277,8 @@
 	        ),
 	        React.createElement(
 	          "a",
-	          { onClick: this.props.setScrollState },
+	          { onClick: this.props.setScrollState,
+	            className: this.props.scrollState == 1 ? 'active' : '' },
 	          React.createElement("i", { className: "fa fa-file-text fa-2x" }),
 	          React.createElement(
 	            "p",
@@ -21273,7 +21288,8 @@
 	        ),
 	        React.createElement(
 	          "a",
-	          { onClick: this.props.setScrollState },
+	          { onClick: this.props.setScrollState,
+	            className: this.props.scrollState == 2 ? 'active' : '' },
 	          React.createElement("i", { className: "fa fa-code fa-2x" }),
 	          React.createElement(
 	            "p",
@@ -21283,7 +21299,8 @@
 	        ),
 	        React.createElement(
 	          "a",
-	          { onClick: this.props.setScrollState },
+	          { onClick: this.props.setScrollState,
+	            className: this.props.scrollState == 3 ? 'active' : '' },
 	          React.createElement("i", { className: "fa fa-phone fa-2x" }),
 	          React.createElement(
 	            "p",
@@ -21342,7 +21359,7 @@
 	          React.createElement(
 	            'div',
 	            { className: "circle-overlay " + this.isActive('summary') },
-	            'SUMMARY'
+	            'ABOUT ME'
 	          )
 	        ),
 	        React.createElement(
@@ -21374,7 +21391,7 @@
 	        )
 	      ),
 	      React.createElement(
-	        'div',
+	        'pre',
 	        { className: 'experience-content' },
 	        this.activeContent()
 	      )
@@ -21495,7 +21512,7 @@
 	'use strict';
 	
 	module.exports = {
-	  summary: 'Put a bird on it VHS irony whatever PBR&B ramps fingerstache. Mlkshk man braid freegan beard austin pug, cornhole leggings. Viral pitchfork hashtag, vice artisan etsy tattooed. Gluten-free pabst selfies 8-bit. Taxidermy master cleanse trust fund chambray put a bird on it, ethical tattooed sustainable celiac. Narwhal YOLO fashion axe single-origin coffee poutine mixtape, selvage echo park bespoke cred. Ethical offal gochujang, truffaut twee drinking vinegar kogi cardigan deep v master cleanse food truck +1.\n\n            Ramps shoreditch narwhal, XOXO listicle 3 wolf moon synth neutra tousled jean shorts kale chips truffaut. Shoreditch crucifix pour-over, gochujang man braid letterpress asymmetrical roof party next level taxidermy chicharrones organic church-key. Neutra XOXO literally cred four dollar toast. Church-key ugh DIY kinfolk marfa. Flannel seitan +1, banjo fap gentrify franzen gluten-free lo-fi. Normcore synth kale chips pinterest. Keffiyeh godard street art, mumblecore pinterest normcore 8-bit fanny pack kitsch salvia dreamcatcher chambray swag roof party.',
+	  summary: 'I am a web developer and coding instructor currently living in San Francisco.\n\n  After graduating from UC Berkeley in 2014 and spending a year working on community health projects in Mendocino County, I attended App Academy\'s competitive 12-week programming bootcamp for training in web development. App Academy hired me as a full-time teaching assistant directly out of the program and I have been mentoring students, delivering lectures, developing internal tools, and creating curriculum since.\n\n  My skillset includes Ruby, Rails, Javascript, React, Flux, Redux, RSPec, Capybara, Jasmine, and Jest. I\'ve been trained in object-oriented design patterns, Test Driven Development, and responsive design. I am well-practiced in working with new code bases and enjoy writing tests for React and Rails applications.\n\n  I would love to work with your community organization or local business to create a beautiful web application.',
 	  teaching: 'Ramps shoreditch narwhal, XOXO listicle 3 wolf moon synth neutra tousled jean shorts kale chips truffaut. Shoreditch crucifix pour-over, gochujang man braid letterpress asymmetrical roof party next level taxidermy chicharrones organic church-key. Neutra XOXO literally cred four dollar toast. Church-key ugh DIY kinfolk marfa. Flannel seitan +1, banjo fap gentrify franzen gluten-free lo-fi. Normcore synth kale chips pinterest. Keffiyeh godard street art, mumblecore pinterest normcore 8-bit fanny pack kitsch salvia dreamcatcher chambray swag roof party.',
 	  technologies: 'Affogato beard you probably haven\'t heard of them, fashion axe ramps flexitarian marfa tousled. Shoreditch plaid godard keytar before they sold out normcore. Irony retro kinfolk, letterpress cronut scenester quinoa thundercats tacos plaid pickled gentrify. Chambray ethical mixtape four dollar toast fap waistcoat, post-ironic gochujang mustache roof party. Organic freegan keffiyeh bushwick listicle. Locavore gentrify listicle shabby chic. Lo-fi kinfolk distillery twee gluten-free williamsburg.',
 	  project1: 'this is info about project 1',
@@ -21509,28 +21526,41 @@
 /* 177 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	var React = __webpack_require__(166);
 	var sampleText = __webpack_require__(176);
 	
 	module.exports = React.createClass({
-	  displayName: "exports",
+	  displayName: 'exports',
 	  getInitialState: function getInitialState() {
 	    return { focused: 0 };
 	  },
 	  componentDidMount: function componentDidMount() {
+	    var _this = this;
+	
 	    this.resumeInterval();
+	    addEventListener('resize', function () {
+	      if (window.innerWidth > 800) {
+	        _this.resumeInterval();
+	      } else {
+	        _this.arrestInterval();
+	        _this.setState({ focused: 0 });
+	      }
+	    });
 	  },
 	  arrestInterval: function arrestInterval() {
 	    clearInterval(this.interval);
+	    this.interval = undefined;
 	  },
 	  resumeInterval: function resumeInterval() {
-	    var _this = this;
+	    var _this2 = this;
 	
-	    this.interval = setInterval(function () {
-	      return _this.onRightArrow();
-	    }, 3000);
+	    if (!this.interval && window.innerWidth > 800) {
+	      this.interval = setInterval(function () {
+	        return _this2.onRightArrow();
+	      }, 3000);
+	    }
 	  },
 	  componentWillUnmount: function componentWillUnmount() {
 	    this.arrestInterval;
@@ -21542,85 +21572,85 @@
 	    this.setState({ focused: (this.state.focused - 1 + 4) % 4 });
 	  },
 	  getSliderStyle: function getSliderStyle() {
-	    return { marginLeft: -(this.state.focused * 700) };
+	    return { marginLeft: -(this.state.focused * window.innerWidth * 0.62) };
 	  },
 	  render: function render() {
-	    var _this2 = this;
+	    var _this3 = this;
 	
 	    return React.createElement(
-	      "div",
+	      'div',
 	      null,
 	      React.createElement(
-	        "div",
-	        { className: "project-container-container" },
-	        React.createElement("i", { className: "fa fa-chevron-left fa-4x", onClick: this.onLeftArrow }),
+	        'div',
+	        { className: 'project-container-container' },
+	        React.createElement('i', { className: 'fa fa-chevron-left fa-4x mobile-disappear', onClick: this.onLeftArrow }),
 	        React.createElement(
-	          "div",
-	          { className: "project-container" },
+	          'div',
+	          { className: 'project-container' },
 	          React.createElement(
-	            "div",
-	            { className: "project-slider",
+	            'div',
+	            { className: 'project-slider',
 	              onMouseEnter: this.arrestInterval,
 	              onMouseLeave: this.resumeInterval,
 	              style: this.getSliderStyle() },
 	            React.createElement(
-	              "div",
-	              { className: "project" },
+	              'div',
+	              { className: 'project' },
 	              React.createElement(
-	                "div",
-	                { className: "project-overlay" },
+	                'div',
+	                { className: 'project-overlay' },
 	                sampleText.project1
 	              )
 	            ),
 	            React.createElement(
-	              "div",
-	              { className: "project" },
+	              'div',
+	              { className: 'project' },
 	              React.createElement(
-	                "div",
-	                { className: "project-overlay" },
+	                'div',
+	                { className: 'project-overlay' },
 	                sampleText.project2
 	              )
 	            ),
 	            React.createElement(
-	              "div",
-	              { className: "project" },
+	              'div',
+	              { className: 'project' },
 	              React.createElement(
-	                "div",
-	                { className: "project-overlay" },
+	                'div',
+	                { className: 'project-overlay' },
 	                sampleText.project3
 	              )
 	            ),
 	            React.createElement(
-	              "div",
-	              { className: "project" },
+	              'div',
+	              { className: 'project' },
 	              React.createElement(
-	                "div",
-	                { className: "project-overlay" },
+	                'div',
+	                { className: 'project-overlay' },
 	                sampleText.project4
 	              )
 	            )
 	          )
 	        ),
-	        React.createElement("i", { className: "fa fa-chevron-right fa-4x", onClick: this.onRightArrow })
+	        React.createElement('i', { className: 'fa fa-chevron-right fa-4x mobile-disappear', onClick: this.onRightArrow })
 	      ),
 	      React.createElement(
-	        "div",
-	        { className: "project-nav" },
-	        React.createElement("div", { className: this.state.focused == 0 ? 'project-nav-button active' : 'project-nav-button',
+	        'div',
+	        { className: 'project-nav mobile-disappear' },
+	        React.createElement('div', { className: this.state.focused == 0 ? 'project-nav-button active' : 'project-nav-button',
 	          onClick: function onClick() {
-	            return _this2.setState({ focused: 0 });
+	            return _this3.setState({ focused: 0 });
 	          } }),
-	        React.createElement("div", { className: this.state.focused == 1 ? 'project-nav-button active' : 'project-nav-button',
+	        React.createElement('div', { className: this.state.focused == 1 ? 'project-nav-button active' : 'project-nav-button',
 	          onClick: function onClick() {
-	            return _this2.setState({ focused: 1 });
+	            return _this3.setState({ focused: 1 });
 	          } }),
-	        React.createElement("div", { className: this.state.focused == 2 ? 'project-nav-button active' : 'project-nav-button',
+	        React.createElement('div', { className: this.state.focused == 2 ? 'project-nav-button active' : 'project-nav-button',
 	          onClick: function onClick() {
-	            return _this2.setState({ focused: 2 });
+	            return _this3.setState({ focused: 2 });
 	          } }),
-	        React.createElement("div", { className: this.state.focused == 3 ? 'project-nav-button active' : 'project-nav-button',
+	        React.createElement('div', { className: this.state.focused == 3 ? 'project-nav-button active' : 'project-nav-button',
 	          onClick: function onClick() {
-	            return _this2.setState({ focused: 3 });
+	            return _this3.setState({ focused: 3 });
 	          } })
 	      )
 	    );
@@ -21642,11 +21672,27 @@
 	    return React.createElement(
 	      'div',
 	      { className: 'contact-container' },
-	      React.createElement('div', { className: 'profile-pic' }),
 	      React.createElement(
 	        'div',
-	        { className: 'profile-description' },
-	        sampleText.profileDescription
+	        { className: 'profile-pic' },
+	        React.createElement(
+	          'div',
+	          { className: 'profile-description' },
+	          React.createElement(
+	            'h2',
+	            null,
+	            'brooke.nicole.angel@gmail.com'
+	          )
+	        ),
+	        React.createElement(
+	          'div',
+	          { className: 'up-arrow', onClick: this.props.upArrowClick },
+	          React.createElement(
+	            'a',
+	            null,
+	            React.createElement('i', { className: 'fa fa-arrow-circle-up fa-4x' })
+	          )
+	        )
 	      )
 	    );
 	  }
