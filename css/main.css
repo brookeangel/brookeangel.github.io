@@ -1,7 +1,7 @@
 /* Reset */
 
 html, body, section, article,
-h1, h2, p, strong, em, a, ul, main, nav {
+h1, h2, h3, p, strong, em, a, ul, main, nav {
   margin: 0;
   border: 0;
   padding: 0;
@@ -13,6 +13,7 @@ h1, h2, p, strong, em, a, ul, main, nav {
   background: transparent;
   font-family: 'Josefin Sans', sans-serif;
   font-size: 16px;
+  font-weight: normal;
 }
 
 /* Layout */
@@ -21,13 +22,24 @@ body {
   overflow-x: hidden;
 }
 
+body.ReactModal__Body--open {
+  overflow-y: hidden;
+}
+
+strong {
+  font-size: inherit;
+  font-weight: 700;
+}
+
 section {
   min-height: calc(100vh - 75px);
   width: 100vw;
-  margin-top: 70px;
+  padding-top: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-sizing: content-box;
+  background-color: rgba(255, 255, 255, 1);
 }
 
 h1 {
@@ -36,6 +48,12 @@ h1 {
 
 h2 {
   font-size: 50px;
+  text-align: center;
+}
+
+h3 {
+  font-size: 25px;
+  text-align: center;
 }
 
 a {
@@ -75,7 +93,6 @@ a {
   position: fixed;
   z-index: 10;
   left: 75px;
-  margin-top: -75px;
   align-items: center;
 }
 
@@ -137,10 +154,21 @@ a {
 /* Main Banner */
 
 #main-banner {
-  background-image: url('../images/tmpwatercolor.jpg');
-  background-size: cover;
   flex-direction: column;
   justify-content: space-around;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.main-banner-overlay {
+  opacity: 50%;
+  background-size: cover;
+  background-image: url('../assets/images/nuns.jpg');
+  width: 100%;
+  height: calc(100% + 75px);
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: -2;
 }
 
 .down-arrow {
@@ -175,7 +203,7 @@ a {
 }
 
 .circle {
-  background-image: url('http://placecorgi.com/150/150');
+  background-image: url('../assets/images/circle1.png');
   height: 15vw;
   width: 15vw;
   max-height: 150px;
@@ -188,7 +216,7 @@ a {
 }
 
 .circle-overlay {
-  background-color: rgba(127,255,212,0.5);
+  background-color: rgba(0, 102, 153, 0.5);
   width: 100%;
   height: 100%;
   display: flex;
@@ -199,11 +227,12 @@ a {
 }
 
 .circle-overlay.active {
-  background-color: rgba(127,255,212,1);
+  background-color: rgba(0, 102, 153, 1);
+  font-weight: 700;
 }
 
 .circle-overlay:hover {
-  background-color: rgba(127,255,212,0.9);
+  background-color: rgba(0, 102, 153, 0.9);
   transition: background-color 0.5s linear;
 }
 
@@ -216,6 +245,13 @@ a {
   overflow-y: scroll;
   white-space: pre-wrap;
   font: inherit;
+  font-size: 20px;
+}
+
+.icons img {
+  width: 50px;
+  height: 50px;
+  margin: 15px;
 }
 
 /* Projects */
@@ -306,13 +342,16 @@ a {
   transition: visibility 0s linear 0.25s, opacity 1s linear;
 }
 
-/* Causes */
+/* Contact */
 
-.profile-pic {
+#contact {
+  background-color: rgba(255,255,255,1);
+  padding-top: 0;
+}
+
+.contact-box {
   width: 100vw;
   height: 100vh;
-  background-image: url('../images/profile.jpg');
-  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -324,6 +363,22 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.contact-container-overlay {
+  opacity: 50%;
+  background-size: cover;
+  background-image: url('../assets/images/llama.jpg');
+  width: 100%;
+  height: calc(100% + 75px);
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: -3;
+}
+
+.contact-container-overlay.active {
+  z-index: -1;
 }
 
 .profile-description {
@@ -350,6 +405,12 @@ a {
   transition:top 0.10s linear;
 }
 
+.profile-description p {
+  margin: 25px;
+  text-align: center;
+  font-size: 20px;
+}
+
 @media (max-width: 950px) {
 
   h1 {
@@ -363,6 +424,9 @@ a {
 }
 
 @media (max-width: 680px) {
+  section {
+    padding-top: 0;
+  }
   .main-nav > a {
     display: none;
   }
@@ -377,11 +441,20 @@ a {
     display: none;
   }
 
+  #main-banner {
+    margin-top: 75px;
+  }
+
   .main-description {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+  }
+
+  #experience {
+    align-items: flex-start;
   }
 
   .experience {
@@ -389,18 +462,19 @@ a {
   }
 
   .experience-circles {
-    flex-direction: column;
-    box-sizing: border-box;
+    display: block;
   }
 
   .circle {
+    display: inline-block;
     border-radius: 0px;
-    width: 100%;
+    width: 50%;
     height: auto;
     min-height: 0px;
     max-height: none;
     min-width: none;
     max-width: none;
+    vertical-align: top;
   }
 
   .circle-overlay {

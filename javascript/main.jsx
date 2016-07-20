@@ -1,5 +1,6 @@
 const ReactDOM = require('react-dom');
 const React = require('react');
+const Modal = require('react-modal');
 const MainNav = require('./main_nav');
 const PointNav = require('./point_nav');
 const Experience = require('./experience');
@@ -68,9 +69,10 @@ const App = React.createClass({
                   scrollState={this.state.scrollState}/>
         <div>
         <section id="main-banner">
+          <div className="main-banner-overlay"></div>
           <div className="main-description">
             <h1>BROOKE ANGEL</h1>
-            <div>Giant tree. Developer. Goddess of debugging.</div>
+            <h3>Fullstack web developer and Rails instructor.</h3>
           </div>
           <div className="down-arrow" onClick={this.downArrowClick}>
             <a><i className="fa fa-arrow-circle-down fa-4x"></i></a>
@@ -85,7 +87,7 @@ const App = React.createClass({
           <Projects />
         </section>
 
-        <section id="causes">
+        <section id="contact">
           <Contact upArrowClick={this.upArrowClick}/>
         </section>
         </div>
@@ -94,6 +96,7 @@ const App = React.createClass({
   }
 });
 
-document.addEventListener('DOMContentLoaded', () =>
-  ReactDOM.render(<App />, document.getElementById('root'))
-);
+document.addEventListener('DOMContentLoaded', () => {
+  ReactDOM.render(<App />, document.getElementById('root'));
+  Modal.setAppElement(document.getElementById('root'));
+});
