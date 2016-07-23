@@ -26,7 +26,7 @@ module.exports = React.createClass({
 
           <a onClick={this.props.setScrollState}
             className={this.props.scrollState == 3 ? 'active' : ''}>
-            <i className="fa fa-phone fa-2x"></i>
+            <i className="fa fa-info fa-2x"></i>
             <p>Contact</p>
           </a>
         </nav>

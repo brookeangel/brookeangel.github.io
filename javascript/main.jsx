@@ -19,27 +19,18 @@ const App = React.createClass({
     });
   },
 
-  setScrollState (e) {
+  setScrollInterval (e) {
     let siblings = e.currentTarget.parentElement.children;
     let current = Array.from(siblings).indexOf(e.currentTarget);
     this.scrollTo(current);
   },
 
-  downArrowClick () {
-    this.scrollTo(1);
-  },
-
-  upArrowClick () {
-    this.scrollTo(0);
-  },
-
-  mainLogoClick (e) {
-    e.preventDefault();
-    this.scrollTo(0);
-  },
-
   scrollTo (current) {
     let scrollHeight = current * window.innerHeight;
+    if (current === 3) {
+      scrollHeight -= 20;
+    }
+
     clearInterval(this.scrollInterval);
 
     this.scrollInterval = setInterval(() => {
@@ -57,15 +48,11 @@ const App = React.createClass({
     }, 1);
   },
 
-  clearScrollInterval () {
-    clearInterval(this.scrollInterval);
-  },
-
   render () {
     return(
       <main>
-        <MainNav mainLogoClick={this.mainLogoClick} />
-        <PointNav setScrollState={this.setScrollState}
+        <MainNav mainLogoClick={() => {this.scrollTo(0)}} />
+        <PointNav setScrollState={this.setScrollInterval}
                   scrollState={this.state.scrollState}/>
         <div>
         <section id="main-banner">
@@ -74,7 +61,8 @@ const App = React.createClass({
             <h1>BROOKE ANGEL</h1>
             <h3>Fullstack web developer and Rails instructor.</h3>
           </div>
-          <div className="down-arrow" onClick={this.downArrowClick}>
+          <div className="down-arrow"
+                onClick={() => {this.scrollTo(1)}}>
             <a><i className="fa fa-arrow-circle-down fa-4x"></i></a>
           </div>
         </section>
@@ -88,7 +76,7 @@ const App = React.createClass({
         </section>
 
         <section id="contact">
-          <Contact upArrowClick={this.upArrowClick}/>
+          <Contact upArrowClick={() => {this.scrollTo(0)}}/>
         </section>
         </div>
       </main>

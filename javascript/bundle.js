@@ -48,12 +48,12 @@
 	
 	var ReactDOM = __webpack_require__(1);
 	var React = __webpack_require__(166);
-	var Modal = __webpack_require__(178);
-	var MainNav = __webpack_require__(172);
-	var PointNav = __webpack_require__(173);
-	var Experience = __webpack_require__(174);
-	var Projects = __webpack_require__(175);
-	var Contact = __webpack_require__(177);
+	var Modal = __webpack_require__(172);
+	var MainNav = __webpack_require__(192);
+	var PointNav = __webpack_require__(193);
+	var Experience = __webpack_require__(194);
+	var Projects = __webpack_require__(197);
+	var Contact = __webpack_require__(198);
 	
 	var App = React.createClass({
 	  displayName: 'App',
@@ -68,25 +68,19 @@
 	      _this.setState({ scrollState: newScrollState });
 	    });
 	  },
-	  setScrollState: function setScrollState(e) {
+	  setScrollInterval: function setScrollInterval(e) {
 	    var siblings = e.currentTarget.parentElement.children;
 	    var current = Array.from(siblings).indexOf(e.currentTarget);
 	    this.scrollTo(current);
-	  },
-	  downArrowClick: function downArrowClick() {
-	    this.scrollTo(1);
-	  },
-	  upArrowClick: function upArrowClick() {
-	    this.scrollTo(0);
-	  },
-	  mainLogoClick: function mainLogoClick(e) {
-	    e.preventDefault();
-	    this.scrollTo(0);
 	  },
 	  scrollTo: function scrollTo(current) {
 	    var _this2 = this;
 	
 	    var scrollHeight = current * window.innerHeight;
+	    if (current === 3) {
+	      scrollHeight -= 20;
+	    }
+	
 	    clearInterval(this.scrollInterval);
 	
 	    this.scrollInterval = setInterval(function () {
@@ -102,15 +96,16 @@
 	      }
 	    }, 1);
 	  },
-	  clearScrollInterval: function clearScrollInterval() {
-	    clearInterval(this.scrollInterval);
-	  },
 	  render: function render() {
+	    var _this3 = this;
+	
 	    return React.createElement(
 	      'main',
 	      null,
-	      React.createElement(MainNav, { mainLogoClick: this.mainLogoClick }),
-	      React.createElement(PointNav, { setScrollState: this.setScrollState,
+	      React.createElement(MainNav, { mainLogoClick: function mainLogoClick() {
+	          _this3.scrollTo(0);
+	        } }),
+	      React.createElement(PointNav, { setScrollState: this.setScrollInterval,
 	        scrollState: this.state.scrollState }),
 	      React.createElement(
 	        'div',
@@ -135,7 +130,10 @@
 	          ),
 	          React.createElement(
 	            'div',
-	            { className: 'down-arrow', onClick: this.downArrowClick },
+	            { className: 'down-arrow',
+	              onClick: function onClick() {
+	                _this3.scrollTo(1);
+	              } },
 	            React.createElement(
 	              'a',
 	              null,
@@ -156,7 +154,9 @@
 	        React.createElement(
 	          'section',
 	          { id: 'contact' },
-	          React.createElement(Contact, { upArrowClick: this.upArrowClick })
+	          React.createElement(Contact, { upArrowClick: function upArrowClick() {
+	              _this3.scrollTo(0);
+	            } })
 	        )
 	      )
 	    );
@@ -21204,548 +21204,22 @@
 /* 172 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	module.exports = __webpack_require__(173);
 	
-	var React = __webpack_require__(166);
-	
-	module.exports = React.createClass({
-	  displayName: "exports",
-	  render: function render() {
-	    return React.createElement(
-	      "nav",
-	      { className: "main-nav" },
-	      React.createElement(
-	        "a",
-	        { onClick: this.props.mainLogoClick },
-	        React.createElement(
-	          "div",
-	          { className: "logo" },
-	          "BROOKE ANGEL"
-	        )
-	      ),
-	      React.createElement(
-	        "div",
-	        { className: "nav-buttons" },
-	        React.createElement(
-	          "a",
-	          { href: "https://www.linkedin.com/in/brookeangel?trk=hp-identity-name",
-	            target: "_blank" },
-	          React.createElement("i", { className: "fa fa-linkedin fa-2x" })
-	        ),
-	        React.createElement(
-	          "a",
-	          { href: "https://github.com/brookeangel",
-	            target: "_blank" },
-	          React.createElement("i", { className: "fa fa-github fa-2x" })
-	        ),
-	        React.createElement(
-	          "a",
-	          { href: "http://brookecodes.tumblr.com/",
-	            target: "_blank" },
-	          React.createElement("i", { className: "fa fa-tumblr fa-2x" })
-	        )
-	      )
-	    );
-	  }
-	});
+
 
 /***/ },
 /* 173 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
-	
-	var React = __webpack_require__(166);
-	
-	module.exports = React.createClass({
-	  displayName: "exports",
-	  render: function render() {
-	    return React.createElement(
-	      "div",
-	      { className: "point-nav" },
-	      React.createElement("div", { className: "point-nav-buttons-background" }),
-	      React.createElement(
-	        "nav",
-	        { className: "point-nav-buttons" },
-	        React.createElement(
-	          "a",
-	          { onClick: this.props.setScrollState,
-	            className: this.props.scrollState == 0 ? 'active' : '' },
-	          React.createElement("i", { className: "fa fa-home fa-2x" }),
-	          React.createElement(
-	            "p",
-	            null,
-	            "Home"
-	          )
-	        ),
-	        React.createElement(
-	          "a",
-	          { onClick: this.props.setScrollState,
-	            className: this.props.scrollState == 1 ? 'active' : '' },
-	          React.createElement("i", { className: "fa fa-file-text fa-2x" }),
-	          React.createElement(
-	            "p",
-	            null,
-	            "Experience"
-	          )
-	        ),
-	        React.createElement(
-	          "a",
-	          { onClick: this.props.setScrollState,
-	            className: this.props.scrollState == 2 ? 'active' : '' },
-	          React.createElement("i", { className: "fa fa-code fa-2x" }),
-	          React.createElement(
-	            "p",
-	            null,
-	            "Projects"
-	          )
-	        ),
-	        React.createElement(
-	          "a",
-	          { onClick: this.props.setScrollState,
-	            className: this.props.scrollState == 3 ? 'active' : '' },
-	          React.createElement("i", { className: "fa fa-phone fa-2x" }),
-	          React.createElement(
-	            "p",
-	            null,
-	            "Contact"
-	          )
-	        )
-	      )
-	    );
-	  }
-	});
-
-/***/ },
-/* 174 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var React = __webpack_require__(166);
-	var Modal = __webpack_require__(178);
-	var PDF = __webpack_require__(198);
-	var sampleText = __webpack_require__(176);
-	
-	module.exports = React.createClass({
-	  displayName: 'exports',
-	  getInitialState: function getInitialState() {
-	    return { active: 'summary' };
-	  },
-	  setActive: function setActive(category) {
-	    this.setState({ active: category });
-	  },
-	  isActive: function isActive(category) {
-	    return this.state.active === category ? 'active' : '';
-	  },
-	  activeContent: function activeContent() {
-	    if (this.state.active == 'resume') {
-	      return this.getModal();
-	    } else if (this.state.active == 'technologies') {
-	      return React.createElement(
-	        'pre',
-	        { className: 'experience-content' },
-	        React.createElement(
-	          'center',
-	          { className: 'icons' },
-	          React.createElement('img', { src: '../assets/icons/git.png' }),
-	          React.createElement('img', { src: '../assets/icons/github.png' }),
-	          React.createElement('img', { src: '../assets/icons/rails.png' }),
-	          React.createElement('img', { src: '../assets/icons/javascript.png' }),
-	          React.createElement('img', { src: '../assets/icons/html5.png' }),
-	          React.createElement('img', { src: '../assets/icons/css3.png' }),
-	          React.createElement('img', { src: '../assets/icons/react.png' }),
-	          React.createElement('br', null),
-	          React.createElement(
-	            'strong',
-	            null,
-	            'Version Control Systems | '
-	          ),
-	          ' Git / Github',
-	          React.createElement('br', null),
-	          React.createElement('br', null),
-	          React.createElement(
-	            'strong',
-	            null,
-	            'JavaScript | '
-	          ),
-	          ' JavaScript, React.js, Flux, Redux, Node.js',
-	          React.createElement('br', null),
-	          React.createElement('br', null),
-	          React.createElement(
-	            'strong',
-	            null,
-	            'Ruby | '
-	          ),
-	          ' Ruby, Rails ',
-	          React.createElement('br', null),
-	          React.createElement('br', null),
-	          React.createElement(
-	            'strong',
-	            null,
-	            'Testing Frameworks |'
-	          ),
-	          ' RSpec, Capybara, Jest, Jasmine, Mocha',
-	          React.createElement('br', null),
-	          React.createElement('br', null),
-	          React.createElement(
-	            'strong',
-	            null,
-	            'Web Design |'
-	          ),
-	          ' CSS3, HTML5',
-	          React.createElement('br', null),
-	          React.createElement('br', null),
-	          React.createElement(
-	            'strong',
-	            null,
-	            'Misc |'
-	          ),
-	          ' Java, Matlab, Scheme',
-	          React.createElement('br', null),
-	          React.createElement('br', null)
-	        )
-	      );
-	    } else {
-	      return React.createElement(
-	        'pre',
-	        { className: 'experience-content' },
-	        sampleText[this.state.active]
-	      );
-	    }
-	  },
-	  getModal: function getModal() {
-	    var _this = this;
-	
-	    var modalStyle = {
-	      overlay: {
-	        position: 'fixed',
-	        backgroundColor: 'rgba(255, 255, 255, 0.75)',
-	        zIndex: 55,
-	        display: 'flex',
-	        alignItems: 'center',
-	        justifyContent: 'center'
-	      },
-	      content: {
-	        overflowY: 'scroll',
-	        textAlign: 'center'
-	      }
-	    };
-	
-	    return React.createElement(
-	      Modal,
-	      {
-	        isOpen: true,
-	        style: modalStyle,
-	        onRequestClose: function onRequestClose() {
-	          return _this.setState({ active: 'summary' });
-	        }
-	      },
-	      React.createElement(PDF, { file: 'assets/BrookeAngel.pdf',
-	        loading: React.createElement(
-	          'div',
-	          { className: 'loader' },
-	          'Loading...'
-	        ) })
-	    );
-	  },
-	  render: function render() {
-	    return React.createElement(
-	      'div',
-	      { className: 'experience' },
-	      React.createElement(
-	        'div',
-	        { className: 'experience-circles' },
-	        React.createElement(
-	          'div',
-	          { className: 'circle', onClick: this.setActive.bind(null, 'summary') },
-	          React.createElement(
-	            'div',
-	            { className: "circle-overlay " + this.isActive('summary') },
-	            'ABOUT ME'
-	          )
-	        ),
-	        React.createElement(
-	          'div',
-	          { className: 'circle', onClick: this.setActive.bind(null, 'resume') },
-	          React.createElement(
-	            'div',
-	            { className: "circle-overlay " + this.isActive('resume') },
-	            'RESUME'
-	          )
-	        ),
-	        React.createElement(
-	          'div',
-	          { className: 'circle', onClick: this.setActive.bind(null, 'teaching') },
-	          React.createElement(
-	            'div',
-	            { className: "circle-overlay " + this.isActive('teaching') },
-	            'TEACHING'
-	          )
-	        ),
-	        React.createElement(
-	          'div',
-	          { className: 'circle', onClick: this.setActive.bind(null, 'technologies') },
-	          React.createElement(
-	            'div',
-	            { className: "circle-overlay " + this.isActive('technologies') },
-	            'TECHNOLOGIES'
-	          )
-	        )
-	      ),
-	      this.activeContent()
-	    );
-	  }
-	});
-
-/***/ },
-/* 175 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var React = __webpack_require__(166);
-	var sampleText = __webpack_require__(176);
-	
-	module.exports = React.createClass({
-	  displayName: 'exports',
-	  getInitialState: function getInitialState() {
-	    return { focused: 0 };
-	  },
-	  componentDidMount: function componentDidMount() {
-	    var _this = this;
-	
-	    this.resumeInterval();
-	    addEventListener('resize', function () {
-	      if (window.innerWidth > 800) {
-	        _this.resumeInterval();
-	      } else {
-	        _this.arrestInterval();
-	        _this.setState({ focused: 0 });
-	      }
-	    });
-	  },
-	  arrestInterval: function arrestInterval() {
-	    clearInterval(this.interval);
-	    this.interval = undefined;
-	  },
-	  resumeInterval: function resumeInterval() {
-	    var _this2 = this;
-	
-	    if (!this.interval && window.innerWidth > 800) {
-	      this.interval = setInterval(function () {
-	        return _this2.onRightArrow();
-	      }, 3000);
-	    }
-	  },
-	  componentWillUnmount: function componentWillUnmount() {
-	    this.arrestInterval;
-	  },
-	  onRightArrow: function onRightArrow() {
-	    this.setState({ focused: (this.state.focused + 1) % 4 });
-	  },
-	  onLeftArrow: function onLeftArrow() {
-	    this.setState({ focused: (this.state.focused - 1 + 4) % 4 });
-	  },
-	  getSliderStyle: function getSliderStyle() {
-	    return { marginLeft: -(this.state.focused * window.innerWidth * 0.62) };
-	  },
-	  render: function render() {
-	    var _this3 = this;
-	
-	    return React.createElement(
-	      'div',
-	      null,
-	      React.createElement(
-	        'div',
-	        { className: 'project-container-container' },
-	        React.createElement('i', { className: 'fa fa-chevron-left fa-4x mobile-disappear', onClick: this.onLeftArrow }),
-	        React.createElement(
-	          'div',
-	          { className: 'project-container' },
-	          React.createElement(
-	            'div',
-	            { className: 'project-slider',
-	              onMouseEnter: this.arrestInterval,
-	              onMouseLeave: this.resumeInterval,
-	              style: this.getSliderStyle() },
-	            React.createElement(
-	              'div',
-	              { className: 'project' },
-	              React.createElement(
-	                'div',
-	                { className: 'project-overlay' },
-	                sampleText.project1
-	              )
-	            ),
-	            React.createElement(
-	              'div',
-	              { className: 'project' },
-	              React.createElement(
-	                'div',
-	                { className: 'project-overlay' },
-	                sampleText.project2
-	              )
-	            ),
-	            React.createElement(
-	              'div',
-	              { className: 'project' },
-	              React.createElement(
-	                'div',
-	                { className: 'project-overlay' },
-	                sampleText.project3
-	              )
-	            ),
-	            React.createElement(
-	              'div',
-	              { className: 'project' },
-	              React.createElement(
-	                'div',
-	                { className: 'project-overlay' },
-	                sampleText.project4
-	              )
-	            )
-	          )
-	        ),
-	        React.createElement('i', { className: 'fa fa-chevron-right fa-4x mobile-disappear', onClick: this.onRightArrow })
-	      ),
-	      React.createElement(
-	        'div',
-	        { className: 'project-nav mobile-disappear' },
-	        React.createElement('div', { className: this.state.focused == 0 ? 'project-nav-button active' : 'project-nav-button',
-	          onClick: function onClick() {
-	            return _this3.setState({ focused: 0 });
-	          } }),
-	        React.createElement('div', { className: this.state.focused == 1 ? 'project-nav-button active' : 'project-nav-button',
-	          onClick: function onClick() {
-	            return _this3.setState({ focused: 1 });
-	          } }),
-	        React.createElement('div', { className: this.state.focused == 2 ? 'project-nav-button active' : 'project-nav-button',
-	          onClick: function onClick() {
-	            return _this3.setState({ focused: 2 });
-	          } }),
-	        React.createElement('div', { className: this.state.focused == 3 ? 'project-nav-button active' : 'project-nav-button',
-	          onClick: function onClick() {
-	            return _this3.setState({ focused: 3 });
-	          } })
-	      )
-	    );
-	  }
-	});
-
-/***/ },
-/* 176 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	module.exports = {
-	  summary: 'I am a web developer and coding instructor currently living in San Francisco.\n\nAfter graduating from UC Berkeley in 2014 and spending a year working on community health projects in Mendocino County, I attended App Academy\'s competitive 12-week programming bootcamp for training in web development. App Academy hired me as a full-time teaching assistant directly out of the program and I have been mentoring students, delivering lectures, developing internal tools, and creating curriculum since.\n\nMy skillset includes Ruby, Rails, Javascript, React, Flux, Redux, RSPec, Capybara, Jasmine, and Jest. I\'ve been trained in object-oriented design patterns, Test Driven Development, and responsive design. I am well-practiced in working with new code bases and enjoy writing tests for React and Rails applications.\n\nI would love to work with your community organization or local business to create a beautiful web application. See below for samples of my work.',
-	  teaching: 'I am currently a Teaching Assistant at App Academy\'s programming bootcamp. I\'ve lectured to groups of students on topics including Object Oriented Design, Ruby on Rails, React/Flux, CSS, and RSpec/Capybara. I\'ve mentored hundreds of students through App Academy\'s intensive course and helped them understand new concepts and debug their code along the way.\n\nI have also volunteered at RailsBridge Workshops and spoken at Women Who Code events in San Francisco. I am passionate about making coding accessible to new students, and especially enjoy working in environments whose aim is to increase diversity in tech.\n\nIf you are looking for a speaker for your event, please do not hesitate to reach out. I love giving presentations to beginners and am happy to teach about Ruby, Rails, TDD, React/Flux, and more.\n  ',
-	  project1: 'this is info about project 1',
-	  project2: 'this is info about project 2',
-	  project3: 'this is info about project 3',
-	  project4: 'this is info about project 4'
-	};
-
-/***/ },
-/* 177 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var React = __webpack_require__(166);
-	var sampleText = __webpack_require__(176);
-	
-	module.exports = React.createClass({
-	  displayName: 'exports',
-	  render: function render() {
-	
-	    return React.createElement(
-	      'div',
-	      { className: 'contact-container' },
-	      React.createElement(
-	        'div',
-	        { className: 'contact-box' },
-	        React.createElement(
-	          'div',
-	          { className: 'profile-description' },
-	          React.createElement(
-	            'h2',
-	            null,
-	            'CONTACT ME'
-	          ),
-	          React.createElement(
-	            'h3',
-	            null,
-	            'brooke.nicole.angel@gmail.com'
-	          ),
-	          React.createElement(
-	            'p',
-	            null,
-	            'I\'d love to write code for your community project or organization.',
-	            React.createElement('br', null),
-	            'Don\'t hesitate to reach out.',
-	            React.createElement('br', null),
-	            React.createElement('br', null),
-	            'Photographs by ',
-	            React.createElement(
-	              'strong',
-	              null,
-	              'Danielle Barge'
-	            ),
-	            '.',
-	            React.createElement('br', null),
-	            React.createElement('br', null),
-	            'Site written by ',
-	            React.createElement(
-	              'strong',
-	              null,
-	              'Brooke Angel'
-	            ),
-	            ' using ',
-	            React.createElement(
-	              'strong',
-	              null,
-	              'React.js'
-	            ),
-	            '.'
-	          )
-	        ),
-	        React.createElement(
-	          'div',
-	          { className: 'up-arrow', onClick: this.props.upArrowClick },
-	          React.createElement(
-	            'a',
-	            null,
-	            React.createElement('i', { className: 'fa fa-arrow-circle-up fa-4x' })
-	          )
-	        )
-	      )
-	    );
-	  }
-	});
-
-/***/ },
-/* 178 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(179);
-	
-
-
-/***/ },
-/* 179 */
-/***/ function(module, exports, __webpack_require__) {
-
 	/* WEBPACK VAR INJECTION */(function(process) {var React = __webpack_require__(166);
 	var ReactDOM = __webpack_require__(1);
-	var ExecutionEnvironment = __webpack_require__(180);
-	var ModalPortal = React.createFactory(__webpack_require__(181));
-	var ariaAppHider = __webpack_require__(196);
-	var elementClass = __webpack_require__(197);
+	var ExecutionEnvironment = __webpack_require__(174);
+	var ModalPortal = React.createFactory(__webpack_require__(175));
+	var ariaAppHider = __webpack_require__(190);
+	var elementClass = __webpack_require__(191);
 	var renderSubtreeIntoContainer = __webpack_require__(1).unstable_renderSubtreeIntoContainer;
-	var Assign = __webpack_require__(185);
+	var Assign = __webpack_require__(179);
 	
 	var SafeHTMLElement = ExecutionEnvironment.canUseDOM ? window.HTMLElement : {};
 	var AppElement = ExecutionEnvironment.canUseDOM ? document.body : {appendChild: function() {}};
@@ -21853,7 +21327,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 180 */
+/* 174 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -21898,14 +21372,14 @@
 
 
 /***/ },
-/* 181 */
+/* 175 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(166);
 	var div = React.DOM.div;
-	var focusManager = __webpack_require__(182);
-	var scopeTab = __webpack_require__(184);
-	var Assign = __webpack_require__(185);
+	var focusManager = __webpack_require__(176);
+	var scopeTab = __webpack_require__(178);
+	var Assign = __webpack_require__(179);
 	
 	// so that our CSS is statically analyzable
 	var CLASS_NAMES = {
@@ -22096,10 +21570,10 @@
 
 
 /***/ },
-/* 182 */
+/* 176 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var findTabbable = __webpack_require__(183);
+	var findTabbable = __webpack_require__(177);
 	var modalElement = null;
 	var focusLaterElement = null;
 	var needToFocus = false;
@@ -22170,7 +21644,7 @@
 
 
 /***/ },
-/* 183 */
+/* 177 */
 /***/ function(module, exports) {
 
 	/*!
@@ -22226,10 +21700,10 @@
 
 
 /***/ },
-/* 184 */
+/* 178 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var findTabbable = __webpack_require__(183);
+	var findTabbable = __webpack_require__(177);
 	
 	module.exports = function(node, event) {
 	  var tabbable = findTabbable(node);
@@ -22251,7 +21725,7 @@
 
 
 /***/ },
-/* 185 */
+/* 179 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -22262,9 +21736,9 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var baseAssign = __webpack_require__(186),
-	    createAssigner = __webpack_require__(192),
-	    keys = __webpack_require__(188);
+	var baseAssign = __webpack_require__(180),
+	    createAssigner = __webpack_require__(186),
+	    keys = __webpack_require__(182);
 	
 	/**
 	 * A specialized version of `_.assign` for customizing assigned values without
@@ -22337,7 +21811,7 @@
 
 
 /***/ },
-/* 186 */
+/* 180 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -22348,8 +21822,8 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var baseCopy = __webpack_require__(187),
-	    keys = __webpack_require__(188);
+	var baseCopy = __webpack_require__(181),
+	    keys = __webpack_require__(182);
 	
 	/**
 	 * The base implementation of `_.assign` without support for argument juggling,
@@ -22370,7 +21844,7 @@
 
 
 /***/ },
-/* 187 */
+/* 181 */
 /***/ function(module, exports) {
 
 	/**
@@ -22408,7 +21882,7 @@
 
 
 /***/ },
-/* 188 */
+/* 182 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -22419,9 +21893,9 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var getNative = __webpack_require__(189),
-	    isArguments = __webpack_require__(190),
-	    isArray = __webpack_require__(191);
+	var getNative = __webpack_require__(183),
+	    isArguments = __webpack_require__(184),
+	    isArray = __webpack_require__(185);
 	
 	/** Used to detect unsigned integer values. */
 	var reIsUint = /^\d+$/;
@@ -22650,7 +22124,7 @@
 
 
 /***/ },
-/* 189 */
+/* 183 */
 /***/ function(module, exports) {
 
 	/**
@@ -22793,7 +22267,7 @@
 
 
 /***/ },
-/* 190 */
+/* 184 */
 /***/ function(module, exports) {
 
 	/**
@@ -23042,7 +22516,7 @@
 
 
 /***/ },
-/* 191 */
+/* 185 */
 /***/ function(module, exports) {
 
 	/**
@@ -23228,7 +22702,7 @@
 
 
 /***/ },
-/* 192 */
+/* 186 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -23239,9 +22713,9 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var bindCallback = __webpack_require__(193),
-	    isIterateeCall = __webpack_require__(194),
-	    restParam = __webpack_require__(195);
+	var bindCallback = __webpack_require__(187),
+	    isIterateeCall = __webpack_require__(188),
+	    restParam = __webpack_require__(189);
 	
 	/**
 	 * Creates a function that assigns properties of source object(s) to a given
@@ -23286,7 +22760,7 @@
 
 
 /***/ },
-/* 193 */
+/* 187 */
 /***/ function(module, exports) {
 
 	/**
@@ -23357,7 +22831,7 @@
 
 
 /***/ },
-/* 194 */
+/* 188 */
 /***/ function(module, exports) {
 
 	/**
@@ -23495,7 +22969,7 @@
 
 
 /***/ },
-/* 195 */
+/* 189 */
 /***/ function(module, exports) {
 
 	/**
@@ -23568,7 +23042,7 @@
 
 
 /***/ },
-/* 196 */
+/* 190 */
 /***/ function(module, exports) {
 
 	var _element = typeof document !== 'undefined' ? document.body : null;
@@ -23616,7 +23090,7 @@
 
 
 /***/ },
-/* 197 */
+/* 191 */
 /***/ function(module, exports) {
 
 	module.exports = function(opts) {
@@ -23681,7 +23155,313 @@
 
 
 /***/ },
-/* 198 */
+/* 192 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	var React = __webpack_require__(166);
+	
+	module.exports = React.createClass({
+	  displayName: "exports",
+	  render: function render() {
+	    return React.createElement(
+	      "nav",
+	      { className: "main-nav" },
+	      React.createElement(
+	        "a",
+	        { onClick: this.props.mainLogoClick },
+	        React.createElement(
+	          "div",
+	          { className: "logo" },
+	          "BROOKE ANGEL"
+	        )
+	      ),
+	      React.createElement(
+	        "div",
+	        { className: "nav-buttons" },
+	        React.createElement(
+	          "a",
+	          { href: "https://www.linkedin.com/in/brookeangel?trk=hp-identity-name",
+	            target: "_blank" },
+	          React.createElement("i", { className: "fa fa-linkedin fa-2x" })
+	        ),
+	        React.createElement(
+	          "a",
+	          { href: "https://github.com/brookeangel",
+	            target: "_blank" },
+	          React.createElement("i", { className: "fa fa-github fa-2x" })
+	        ),
+	        React.createElement(
+	          "a",
+	          { href: "http://brookecodes.tumblr.com/",
+	            target: "_blank" },
+	          React.createElement("i", { className: "fa fa-tumblr fa-2x" })
+	        )
+	      )
+	    );
+	  }
+	});
+
+/***/ },
+/* 193 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	var React = __webpack_require__(166);
+	
+	module.exports = React.createClass({
+	  displayName: "exports",
+	  render: function render() {
+	    return React.createElement(
+	      "div",
+	      { className: "point-nav" },
+	      React.createElement("div", { className: "point-nav-buttons-background" }),
+	      React.createElement(
+	        "nav",
+	        { className: "point-nav-buttons" },
+	        React.createElement(
+	          "a",
+	          { onClick: this.props.setScrollState,
+	            className: this.props.scrollState == 0 ? 'active' : '' },
+	          React.createElement("i", { className: "fa fa-home fa-2x" }),
+	          React.createElement(
+	            "p",
+	            null,
+	            "Home"
+	          )
+	        ),
+	        React.createElement(
+	          "a",
+	          { onClick: this.props.setScrollState,
+	            className: this.props.scrollState == 1 ? 'active' : '' },
+	          React.createElement("i", { className: "fa fa-file-text fa-2x" }),
+	          React.createElement(
+	            "p",
+	            null,
+	            "Experience"
+	          )
+	        ),
+	        React.createElement(
+	          "a",
+	          { onClick: this.props.setScrollState,
+	            className: this.props.scrollState == 2 ? 'active' : '' },
+	          React.createElement("i", { className: "fa fa-code fa-2x" }),
+	          React.createElement(
+	            "p",
+	            null,
+	            "Projects"
+	          )
+	        ),
+	        React.createElement(
+	          "a",
+	          { onClick: this.props.setScrollState,
+	            className: this.props.scrollState == 3 ? 'active' : '' },
+	          React.createElement("i", { className: "fa fa-info fa-2x" }),
+	          React.createElement(
+	            "p",
+	            null,
+	            "Contact"
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+/***/ },
+/* 194 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var React = __webpack_require__(166);
+	var Modal = __webpack_require__(172);
+	var PDF = __webpack_require__(195);
+	var sampleText = __webpack_require__(196);
+	
+	module.exports = React.createClass({
+	  displayName: 'exports',
+	  getInitialState: function getInitialState() {
+	    return { active: 'summary' };
+	  },
+	  setActive: function setActive(category) {
+	    this.setState({ active: category });
+	  },
+	  isActive: function isActive(category) {
+	    return this.state.active === category ? 'active' : '';
+	  },
+	  activeContent: function activeContent() {
+	    if (this.state.active == 'resume') {
+	      return this.getModal();
+	    } else if (this.state.active == 'technologies') {
+	      return React.createElement(
+	        'pre',
+	        { className: 'experience-content' },
+	        React.createElement(
+	          'center',
+	          { className: 'icons' },
+	          React.createElement('img', { src: '../assets/icons/git.png' }),
+	          React.createElement('img', { src: '../assets/icons/github.png' }),
+	          React.createElement('img', { src: '../assets/icons/rails.png' }),
+	          React.createElement('img', { src: '../assets/icons/javascript.png' }),
+	          React.createElement('img', { src: '../assets/icons/html5.png' }),
+	          React.createElement('img', { src: '../assets/icons/css3.png' }),
+	          React.createElement('img', { src: '../assets/icons/react.png' }),
+	          React.createElement('br', null),
+	          React.createElement(
+	            'strong',
+	            null,
+	            'Version Control Systems | '
+	          ),
+	          ' Git / Github',
+	          React.createElement('br', null),
+	          React.createElement('br', null),
+	          React.createElement(
+	            'strong',
+	            null,
+	            'JavaScript | '
+	          ),
+	          ' JavaScript, React.js, Flux, Redux, Node.js',
+	          React.createElement('br', null),
+	          React.createElement('br', null),
+	          React.createElement(
+	            'strong',
+	            null,
+	            'Ruby | '
+	          ),
+	          ' Ruby, Rails ',
+	          React.createElement('br', null),
+	          React.createElement('br', null),
+	          React.createElement(
+	            'strong',
+	            null,
+	            'Testing Frameworks |'
+	          ),
+	          ' RSpec, Capybara, Jest, Jasmine, Mocha',
+	          React.createElement('br', null),
+	          React.createElement('br', null),
+	          React.createElement(
+	            'strong',
+	            null,
+	            'Web Design |'
+	          ),
+	          ' CSS3, HTML5',
+	          React.createElement('br', null),
+	          React.createElement('br', null),
+	          React.createElement(
+	            'strong',
+	            null,
+	            'Misc |'
+	          ),
+	          ' Java, Matlab, Scheme',
+	          React.createElement('br', null),
+	          React.createElement('br', null)
+	        )
+	      );
+	    } else {
+	      return React.createElement(
+	        'pre',
+	        { className: 'experience-content' },
+	        sampleText[this.state.active]
+	      );
+	    }
+	  },
+	  getModal: function getModal() {
+	    var _this = this;
+	
+	    var modalStyle = {
+	      overlay: {
+	        position: 'fixed',
+	        backgroundColor: 'rgba(255, 255, 255, 0.75)',
+	        zIndex: 55,
+	        display: 'flex',
+	        alignItems: 'center',
+	        justifyContent: 'center'
+	      },
+	      content: {
+	        overflowY: 'scroll',
+	        textAlign: 'center'
+	      }
+	    };
+	
+	    var loader = React.createElement(
+	      'div',
+	      { className: 'center-spinner' },
+	      React.createElement(
+	        'div',
+	        { className: 'spinner' },
+	        React.createElement('div', { className: 'bounce1' }),
+	        React.createElement('div', { className: 'bounce2' }),
+	        React.createElement('div', { className: 'bounce3' })
+	      )
+	    );
+	
+	    return React.createElement(
+	      Modal,
+	      {
+	        isOpen: true,
+	        style: modalStyle,
+	        onRequestClose: function onRequestClose() {
+	          return _this.setState({ active: 'summary' });
+	        }
+	      },
+	      React.createElement(PDF, { file: 'assets/BrookeAngel.pdf',
+	        loading: loader })
+	    );
+	  },
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      { className: 'experience' },
+	      React.createElement(
+	        'div',
+	        { className: 'experience-circles' },
+	        React.createElement(
+	          'div',
+	          { className: 'circle', onClick: this.setActive.bind(null, 'summary') },
+	          React.createElement(
+	            'div',
+	            { className: "circle-overlay " + this.isActive('summary') },
+	            'ABOUT ME'
+	          )
+	        ),
+	        React.createElement(
+	          'div',
+	          { className: 'circle', onClick: this.setActive.bind(null, 'resume') },
+	          React.createElement(
+	            'div',
+	            { className: "circle-overlay " + this.isActive('resume') },
+	            'RESUME'
+	          )
+	        ),
+	        React.createElement(
+	          'div',
+	          { className: 'circle', onClick: this.setActive.bind(null, 'teaching') },
+	          React.createElement(
+	            'div',
+	            { className: "circle-overlay " + this.isActive('teaching') },
+	            'TEACHING'
+	          )
+	        ),
+	        React.createElement(
+	          'div',
+	          { className: 'circle', onClick: this.setActive.bind(null, 'technologies') },
+	          React.createElement(
+	            'div',
+	            { className: "circle-overlay " + this.isActive('technologies') },
+	            'TECHNOLOGIES'
+	          )
+	        )
+	      ),
+	      this.activeContent()
+	    );
+	  }
+	});
+
+/***/ },
+/* 195 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -23785,6 +23565,234 @@
 	
 	module.exports = Pdf;
 
+
+/***/ },
+/* 196 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	module.exports = {
+	  summary: 'I am a web developer and coding instructor currently living in San Francisco.\n\nAfter graduating from UC Berkeley in 2014 and spending a year working on community health projects in Mendocino County, I attended App Academy\'s competitive 12-week programming bootcamp for training in web development. App Academy hired me as a full-time teaching assistant directly out of the program and I have been mentoring students, delivering lectures, developing internal tools, and creating curriculum since.\n\nMy skillset includes Ruby, Rails, Javascript, React, Flux, Redux, RSPec, Capybara, Jasmine, and Jest. I\'ve been trained in object-oriented design patterns, Test Driven Development, and responsive design. I am well-practiced in working with new code bases and enjoy writing tests for React and Rails applications.\n\nI would love to work with your community organization or local business to create a beautiful web application. See below for samples of my work.',
+	  teaching: 'I am currently a Teaching Assistant at App Academy\'s programming bootcamp. I\'ve lectured to groups of students on topics including Object Oriented Design, Ruby on Rails, React/Flux, CSS, and RSpec/Capybara. I\'ve mentored hundreds of students through App Academy\'s intensive course and helped them understand new concepts and debug their code along the way.\n\nI have also volunteered at RailsBridge Workshops and spoken at Women Who Code events in San Francisco. I am passionate about making coding accessible to new students, and especially enjoy working in environments whose aim is to increase diversity in tech.\n\nIf you are looking for a speaker for your event, please do not hesitate to reach out. I love giving presentations to beginners and am happy to teach about Ruby, Rails, TDD, React/Flux, and more.\n  ',
+	  project1: 'this is info about project 1',
+	  project2: 'this is info about project 2',
+	  project3: 'this is info about project 3',
+	  project4: 'this is info about project 4'
+	};
+
+/***/ },
+/* 197 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var React = __webpack_require__(166);
+	var sampleText = __webpack_require__(196);
+	
+	module.exports = React.createClass({
+	  displayName: 'exports',
+	  getInitialState: function getInitialState() {
+	    return { focused: 0 };
+	  },
+	  componentDidMount: function componentDidMount() {
+	    var _this = this;
+	
+	    this.resumeInterval();
+	    addEventListener('resize', function () {
+	      if (window.innerWidth > 800) {
+	        _this.resumeInterval();
+	      } else {
+	        _this.arrestInterval();
+	        _this.setState({ focused: 0 });
+	      }
+	    });
+	  },
+	  arrestInterval: function arrestInterval() {
+	    clearInterval(this.interval);
+	    this.interval = undefined;
+	  },
+	  resumeInterval: function resumeInterval() {
+	    var _this2 = this;
+	
+	    if (!this.interval && window.innerWidth > 800) {
+	      this.interval = setInterval(function () {
+	        return _this2.onRightArrow();
+	      }, 3000);
+	    }
+	  },
+	  componentWillUnmount: function componentWillUnmount() {
+	    this.arrestInterval;
+	  },
+	  onRightArrow: function onRightArrow() {
+	    this.setState({ focused: (this.state.focused + 1) % 4 });
+	  },
+	  onLeftArrow: function onLeftArrow() {
+	    this.setState({ focused: (this.state.focused - 1 + 4) % 4 });
+	  },
+	  getSliderStyle: function getSliderStyle() {
+	    return { marginLeft: -(this.state.focused * window.innerWidth * 0.62) };
+	  },
+	  render: function render() {
+	    var _this3 = this;
+	
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(
+	        'div',
+	        { className: 'project-container-container' },
+	        React.createElement('i', { className: 'fa fa-chevron-left fa-4x mobile-disappear', onClick: this.onLeftArrow }),
+	        React.createElement(
+	          'div',
+	          { className: 'project-container' },
+	          React.createElement(
+	            'div',
+	            { className: 'project-slider',
+	              onMouseEnter: this.arrestInterval,
+	              onMouseLeave: this.resumeInterval,
+	              style: this.getSliderStyle() },
+	            React.createElement(
+	              'div',
+	              { className: 'project' },
+	              React.createElement(
+	                'div',
+	                { className: 'project-overlay' },
+	                sampleText.project1
+	              )
+	            ),
+	            React.createElement(
+	              'div',
+	              { className: 'project' },
+	              React.createElement(
+	                'div',
+	                { className: 'project-overlay' },
+	                sampleText.project2
+	              )
+	            ),
+	            React.createElement(
+	              'div',
+	              { className: 'project' },
+	              React.createElement(
+	                'div',
+	                { className: 'project-overlay' },
+	                sampleText.project3
+	              )
+	            ),
+	            React.createElement(
+	              'div',
+	              { className: 'project' },
+	              React.createElement(
+	                'div',
+	                { className: 'project-overlay' },
+	                sampleText.project4
+	              )
+	            )
+	          )
+	        ),
+	        React.createElement('i', { className: 'fa fa-chevron-right fa-4x mobile-disappear', onClick: this.onRightArrow })
+	      ),
+	      React.createElement(
+	        'div',
+	        { className: 'project-nav mobile-disappear' },
+	        React.createElement('div', { className: this.state.focused == 0 ? 'project-nav-button active' : 'project-nav-button',
+	          onClick: function onClick() {
+	            return _this3.setState({ focused: 0 });
+	          } }),
+	        React.createElement('div', { className: this.state.focused == 1 ? 'project-nav-button active' : 'project-nav-button',
+	          onClick: function onClick() {
+	            return _this3.setState({ focused: 1 });
+	          } }),
+	        React.createElement('div', { className: this.state.focused == 2 ? 'project-nav-button active' : 'project-nav-button',
+	          onClick: function onClick() {
+	            return _this3.setState({ focused: 2 });
+	          } }),
+	        React.createElement('div', { className: this.state.focused == 3 ? 'project-nav-button active' : 'project-nav-button',
+	          onClick: function onClick() {
+	            return _this3.setState({ focused: 3 });
+	          } })
+	      )
+	    );
+	  }
+	});
+
+/***/ },
+/* 198 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var React = __webpack_require__(166);
+	var sampleText = __webpack_require__(196);
+	
+	module.exports = React.createClass({
+	  displayName: 'exports',
+	  render: function render() {
+	
+	    return React.createElement(
+	      'div',
+	      { className: 'contact-container' },
+	      React.createElement(
+	        'div',
+	        { className: 'contact-box' },
+	        React.createElement(
+	          'div',
+	          { className: 'profile-description' },
+	          React.createElement(
+	            'h2',
+	            null,
+	            'CONTACT ME'
+	          ),
+	          React.createElement(
+	            'h3',
+	            null,
+	            'brooke.nicole.angel@gmail.com'
+	          ),
+	          React.createElement(
+	            'p',
+	            null,
+	            'I\'d love to write code for your community project or organization.',
+	            React.createElement('br', null),
+	            'Don\'t hesitate to reach out.',
+	            React.createElement('br', null),
+	            React.createElement('br', null),
+	            'Photographs by ',
+	            React.createElement(
+	              'strong',
+	              null,
+	              'Danielle Barge'
+	            ),
+	            '.',
+	            React.createElement('br', null),
+	            React.createElement('br', null),
+	            'Site written by ',
+	            React.createElement(
+	              'strong',
+	              null,
+	              'Brooke Angel'
+	            ),
+	            ' using ',
+	            React.createElement(
+	              'strong',
+	              null,
+	              'React.js'
+	            ),
+	            '.'
+	          )
+	        ),
+	        React.createElement(
+	          'div',
+	          { className: 'up-arrow', onClick: this.props.upArrowClick },
+	          React.createElement(
+	            'a',
+	            null,
+	            React.createElement('i', { className: 'fa fa-arrow-circle-up fa-4x' })
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
 
 /***/ }
 /******/ ]);

@@ -66,6 +66,16 @@ module.exports = React.createClass({
       }
     });
 
+    const loader = (
+      <div className="center-spinner">
+        <div className="spinner">
+          <div className="bounce1"></div>
+          <div className="bounce2"></div>
+          <div className="bounce3"></div>
+        </div>
+      </div>
+    );
+
     return (
       <Modal
         isOpen={true}
@@ -73,7 +83,7 @@ module.exports = React.createClass({
         onRequestClose={ () => this.setState({active: 'summary'}) }
       >
         <PDF file="assets/BrookeAngel.pdf"
-              loading={<div className="loader">Loading...</div>}/>
+              loading={loader}/>
       </Modal>);
   },
 
