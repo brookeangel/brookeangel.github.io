@@ -23451,7 +23451,7 @@
 	          React.createElement(
 	            'div',
 	            { className: "circle-overlay " + this.isActive('technologies') },
-	            'TECHNOLOGIES'
+	            'SKILLS'
 	          )
 	        )
 	      ),

@@ -108,7 +108,7 @@ module.exports = React.createClass({
           </div>
           <div className="circle" onClick={this.setActive.bind(null, 'technologies')}>
             <div className={"circle-overlay " + this.isActive('technologies')}>
-              TECHNOLOGIES
+              SKILLS
             </div>
           </div>
         </div>

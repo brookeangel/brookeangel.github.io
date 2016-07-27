@@ -222,7 +222,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: black;
+  color: white;
   transition: background-color 0.5s linear;
 }
 
