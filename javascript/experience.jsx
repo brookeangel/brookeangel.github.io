@@ -1,6 +1,5 @@
 const React = require('react');
 const Modal = require('react-modal');
-const PDF = require('react-pdf');
 const sampleText = require('./sampleText');
 
 module.exports = React.createClass({
@@ -61,8 +60,11 @@ module.exports = React.createClass({
           justifyContent   : 'center'
         },
         content : {
-          overflowY : 'scroll',
-          textAlign: 'center'
+          left: 'auto',
+          right: 'auto',
+          padding: 0,
+          overflowY: 'hidden',
+          overflowX: 'hidden'
       }
     });
 
@@ -82,8 +84,13 @@ module.exports = React.createClass({
         style={modalStyle}
         onRequestClose={ () => this.setState({active: 'summary'}) }
       >
-        <PDF file="assets/BrookeAngel.pdf"
-              loading={loader}/>
+        <div className="x-button"
+          onClick={() => this.setState({active: 'summary'})}>
+          <i className="fa fa-times-circle fa-2x" aria-hidden="true"></i>
+        </div>
+        <div className="modal-content">
+          <img className="resume" src="/assets/images/BrookeAngel.png"/>
+        </div>
       </Modal>);
   },
 

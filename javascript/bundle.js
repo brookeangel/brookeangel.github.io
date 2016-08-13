@@ -52,8 +52,8 @@
 	var MainNav = __webpack_require__(192);
 	var PointNav = __webpack_require__(193);
 	var Experience = __webpack_require__(194);
-	var Projects = __webpack_require__(197);
-	var Contact = __webpack_require__(198);
+	var Projects = __webpack_require__(196);
+	var Contact = __webpack_require__(197);
 	
 	var App = React.createClass({
 	  displayName: 'App',
@@ -23278,8 +23278,7 @@
 	
 	var React = __webpack_require__(166);
 	var Modal = __webpack_require__(172);
-	var PDF = __webpack_require__(195);
-	var sampleText = __webpack_require__(196);
+	var sampleText = __webpack_require__(195);
 	
 	module.exports = React.createClass({
 	  displayName: 'exports',
@@ -23381,8 +23380,11 @@
 	        justifyContent: 'center'
 	      },
 	      content: {
-	        overflowY: 'scroll',
-	        textAlign: 'center'
+	        left: 'auto',
+	        right: 'auto',
+	        padding: 0,
+	        overflowY: 'hidden',
+	        overflowX: 'hidden'
 	      }
 	    };
 	
@@ -23407,8 +23409,19 @@
 	          return _this.setState({ active: 'summary' });
 	        }
 	      },
-	      React.createElement(PDF, { file: 'assets/BrookeAngel.pdf',
-	        loading: loader })
+	      React.createElement(
+	        'div',
+	        { className: 'x-button',
+	          onClick: function onClick() {
+	            return _this.setState({ active: 'summary' });
+	          } },
+	        React.createElement('i', { className: 'fa fa-times-circle fa-2x', 'aria-hidden': 'true' })
+	      ),
+	      React.createElement(
+	        'div',
+	        { className: 'modal-content' },
+	        React.createElement('img', { className: 'resume', src: '/assets/images/BrookeAngel.png' })
+	      )
 	    );
 	  },
 	  render: function render() {
@@ -23462,112 +23475,6 @@
 
 /***/ },
 /* 195 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * @jsx React.DOM
-	 */
-	var React = __webpack_require__(166);
-	var ReactDOM = __webpack_require__(1);
-	
-	var Pdf = React.createClass({
-	  displayName: 'React-PDF',
-	  propTypes: {
-	    file: React.PropTypes.string,
-	    content: React.PropTypes.string,
-	    page: React.PropTypes.number,
-	    scale: React.PropTypes.number,
-	    onDocumentComplete: React.PropTypes.func,
-	    onPageComplete: React.PropTypes.func
-	  },
-	  getInitialState: function() {
-	    return { };
-	  },
-	  getDefaultProps: function() {
-	    return {page: 1, scale: 1.0};
-	  },
-	  componentDidMount: function() {
-	    this._loadPDFDocument(this.props);
-	  },
-	  _loadByteArray: function(byteArray) {
-	    PDFJS.getDocument(byteArray).then(this._onDocumentComplete);
-	  },
-	  _loadPDFDocument: function(props) {
-	    if(!!props.file){
-	      if (typeof props.file === 'string') return PDFJS.getDocument(props.file).then(this._onDocumentComplete);
-	      // Is a File object
-	      var reader = new FileReader(), self = this;
-	      reader.onloadend = function() {
-	        self._loadByteArray(new Uint8Array(reader.result));
-	      };
-	      reader.readAsArrayBuffer(props.file);
-	    }
-	    else if(!!props.content){
-	      var bytes = window.atob(props.content);
-	      var byteLength = bytes.length;
-	      var byteArray = new Uint8Array(new ArrayBuffer(byteLength));
-	      for(index = 0; index < byteLength; index++) {
-	        byteArray[index] = bytes.charCodeAt(index);
-	      }
-	      this._loadByteArray(byteArray);
-	    }
-	    else {
-	      console.error('React_Pdf works with a file(URL) or (base64)content. At least one needs to be provided!');
-	    }
-	  },
-	  componentWillReceiveProps: function(newProps) {
-	    if ((newProps.file && newProps.file !== this.props.file) || (newProps.content && newProps.content !== this.props.content)) {
-	      this._loadPDFDocument(newProps);
-	    }
-	    if (!!this.state.pdf && !!newProps.page && newProps.page !== this.props.page) {
-	      this.setState({page: null});
-	      this.state.pdf.getPage(newProps.page).then(this._onPageComplete);
-	    }
-	  },
-	  render: function() {
-	    var self = this;
-	    if (!!this.state.page){
-	      setTimeout(function() {
-	        if(self.isMounted()){
-	          var canvas = ReactDOM.findDOMNode(self.refs.pdfCanvas),
-	            context = canvas.getContext('2d'),
-	            scale = self.props.scale,
-	            viewport = self.state.page.getViewport(scale);
-	          canvas.height = viewport.height;
-	          canvas.width = viewport.width;
-	          var renderContext = {
-	            canvasContext: context,
-	            viewport: viewport
-	          };
-	          self.state.page.render(renderContext);
-	        }
-	      });
-	      return (React.createElement("canvas", {ref: "pdfCanvas"}));
-	    }
-	    return (this.props.loading || React.createElement("div", null, "Loading pdf...."));
-	  },
-	  _onDocumentComplete: function(pdf){
-	    if (!this.isMounted()) return;
-	    this.setState({ pdf: pdf });
-	    if(!!this.props.onDocumentComplete && typeof this.props.onDocumentComplete === 'function'){
-	      this.props.onDocumentComplete(pdf.numPages);
-	    }
-	    pdf.getPage(this.props.page).then(this._onPageComplete);
-	  },
-	  _onPageComplete: function(page){
-	    if (!this.isMounted()) return;
-	    this.setState({ page: page });
-	    if(!!this.props.onPageComplete && typeof this.props.onPageComplete === 'function'){
-	      this.props.onPageComplete(page.pageIndex + 1);
-	    }
-	  }
-	});
-	
-	module.exports = Pdf;
-
-
-/***/ },
-/* 196 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -23582,13 +23489,13 @@
 	};
 
 /***/ },
-/* 197 */
+/* 196 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var React = __webpack_require__(166);
-	var sampleText = __webpack_require__(196);
+	var sampleText = __webpack_require__(195);
 	
 	module.exports = React.createClass({
 	  displayName: 'exports',
@@ -23717,13 +23624,13 @@
 	});
 
 /***/ },
-/* 198 */
+/* 197 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var React = __webpack_require__(166);
-	var sampleText = __webpack_require__(196);
+	var sampleText = __webpack_require__(195);
 	
 	module.exports = React.createClass({
 	  displayName: 'exports',

@@ -254,6 +254,30 @@ a {
   margin: 15px;
 }
 
+.modal-content {
+  width: 800px;
+  margin: 0;
+  height: calc(100vh - 80px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.resume {
+  width: 790px;
+}
+
+.x-button {
+  position: absolute;
+  right: 25px;
+  top: 15px;
+  cursor: pointer;
+  transition: top 0.1s;
+}
+
+.x-button:hover {
+  top: 17px;
+}
+
 /* Projects */
 
 .project-container-container {
