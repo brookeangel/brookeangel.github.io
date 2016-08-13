@@ -23425,6 +23425,8 @@
 	    );
 	  },
 	  render: function render() {
+	    var _this2 = this;
+	
 	    return React.createElement(
 	      'div',
 	      { className: 'experience' },
@@ -23433,37 +23435,49 @@
 	        { className: 'experience-circles' },
 	        React.createElement(
 	          'div',
-	          { className: 'circle', onClick: this.setActive.bind(null, 'summary') },
+	          { className: "circle " + this.isActive('summary'),
+	            onClick: function onClick() {
+	              return _this2.setActive('summary');
+	            } },
 	          React.createElement(
 	            'div',
-	            { className: "circle-overlay " + this.isActive('summary') },
+	            null,
 	            'ABOUT ME'
 	          )
 	        ),
 	        React.createElement(
 	          'div',
-	          { className: 'circle', onClick: this.setActive.bind(null, 'resume') },
+	          { className: "circle " + this.isActive('resume'),
+	            onClick: function onClick() {
+	              return _this2.setActive('resume');
+	            } },
 	          React.createElement(
 	            'div',
-	            { className: "circle-overlay " + this.isActive('resume') },
+	            null,
 	            'RESUME'
 	          )
 	        ),
 	        React.createElement(
 	          'div',
-	          { className: 'circle', onClick: this.setActive.bind(null, 'teaching') },
+	          { className: "circle " + this.isActive('teaching'),
+	            onClick: function onClick() {
+	              return _this2.setActive('teaching');
+	            } },
 	          React.createElement(
 	            'div',
-	            { className: "circle-overlay " + this.isActive('teaching') },
+	            null,
 	            'TEACHING'
 	          )
 	        ),
 	        React.createElement(
 	          'div',
-	          { className: 'circle', onClick: this.setActive.bind(null, 'technologies') },
+	          { className: "circle " + this.isActive('technologies'),
+	            onClick: function onClick() {
+	              return _this2.setActive('technologies');
+	            } },
 	          React.createElement(
 	            'div',
-	            { className: "circle-overlay " + this.isActive('technologies') },
+	            null,
 	            'SKILLS'
 	          )
 	        )

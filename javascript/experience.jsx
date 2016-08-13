@@ -98,23 +98,27 @@ module.exports = React.createClass({
     return (
       <div className="experience">
         <div className="experience-circles">
-          <div className="circle" onClick={this.setActive.bind(null, 'summary')}>
-            <div className={"circle-overlay " + this.isActive('summary')}>
+          <div className={"circle " + this.isActive('summary')}
+                onClick={() => this.setActive('summary')}>
+            <div>
               ABOUT ME
             </div>
           </div>
-          <div className="circle" onClick={this.setActive.bind(null, 'resume')}>
-            <div className={"circle-overlay " + this.isActive('resume')}>
+          <div className={"circle " + this.isActive('resume')}
+                onClick={() => this.setActive('resume')}>
+            <div>
               RESUME
             </div>
           </div>
-          <div className="circle" onClick={this.setActive.bind(null, 'teaching')}>
-            <div className={"circle-overlay " + this.isActive('teaching')}>
+          <div className={"circle " + this.isActive('teaching')}
+                onClick={() => this.setActive('teaching')}>
+            <div>
               TEACHING
             </div>
           </div>
-          <div className="circle" onClick={this.setActive.bind(null, 'technologies')}>
-            <div className={"circle-overlay " + this.isActive('technologies')}>
+          <div className={"circle " + this.isActive('technologies')}
+                onClick={() => this.setActive('technologies')}>
+            <div>
               SKILLS
             </div>
           </div>
