@@ -55,9 +55,18 @@ module.exports = React.createClass({
                   onMouseEnter={this.arrestInterval}
                   onMouseLeave={this.resumeInterval}
                   style={this.getSliderStyle()}>
-              <div className="project">
+              <div className="project project-1">
                 <div className="project-overlay">
-                  {sampleText.project1}
+                  <h1>Miniframe</h1>
+                  <p>{sampleText.project1}</p>
+                  <div>
+                    <a href="https://github.com/brookeangel/railslite" alt="Github" target="_blank">
+                      <i className="fa fa-github fa-4x" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://miniframe.herokuapp.com/" alt="See it live!" target="_blank">
+                      <i className="fa fa-external-link fa-4x" aria-hidden="true"></i>
+                    </a>
+                  </div>
                 </div>
               </div>
               <div className="project">
