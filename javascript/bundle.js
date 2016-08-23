@@ -103,7 +103,7 @@
 	      'main',
 	      null,
 	      React.createElement(MainNav, { mainLogoClick: function mainLogoClick() {
-	          _this3.scrollTo(0);
+	          return _this3.scrollTo(0);
 	        } }),
 	      React.createElement(PointNav, { setScrollState: this.setScrollInterval,
 	        scrollState: this.state.scrollState }),
@@ -125,14 +125,14 @@
 	            React.createElement(
 	              'h3',
 	              null,
-	              'Fullstack web developer and Rails instructor.'
+	              'Web developer and Rails/Javascript instructor.'
 	            )
 	          ),
 	          React.createElement(
 	            'div',
 	            { className: 'down-arrow',
 	              onClick: function onClick() {
-	                _this3.scrollTo(1);
+	                return _this3.scrollTo(1);
 	              } },
 	            React.createElement(
 	              'a',
@@ -155,7 +155,7 @@
 	          'section',
 	          { id: 'contact' },
 	          React.createElement(Contact, { upArrowClick: function upArrowClick() {
-	              _this3.scrollTo(0);
+	              return _this3.scrollTo(0);
 	            } })
 	        )
 	      )
@@ -23301,13 +23301,13 @@
 	        React.createElement(
 	          'center',
 	          { className: 'icons' },
-	          React.createElement('img', { src: '../assets/icons/git.png' }),
-	          React.createElement('img', { src: '../assets/icons/github.png' }),
-	          React.createElement('img', { src: '../assets/icons/rails.png' }),
-	          React.createElement('img', { src: '../assets/icons/javascript.png' }),
-	          React.createElement('img', { src: '../assets/icons/html5.png' }),
-	          React.createElement('img', { src: '../assets/icons/css3.png' }),
-	          React.createElement('img', { src: '../assets/icons/react.png' }),
+	          React.createElement('img', { src: 'assets/icons/git.png' }),
+	          React.createElement('img', { src: 'assets/icons/github.png' }),
+	          React.createElement('img', { src: 'assets/icons/rails.png' }),
+	          React.createElement('img', { src: 'assets/icons/javascript.png' }),
+	          React.createElement('img', { src: 'assets/icons/html5.png' }),
+	          React.createElement('img', { src: 'assets/icons/css3.png' }),
+	          React.createElement('img', { src: 'assets/icons/react.png' }),
 	          React.createElement('br', null),
 	          React.createElement(
 	            'strong',
@@ -23420,7 +23420,7 @@
 	      React.createElement(
 	        'div',
 	        { className: 'modal-content' },
-	        React.createElement('img', { className: 'resume', src: '/assets/images/BrookeAngel.png' })
+	        React.createElement('img', { className: 'resume', src: 'assets/images/BrookeAngel.png' })
 	      )
 	    );
 	  },
@@ -23497,9 +23497,9 @@
 	  summary: 'I am a web developer and coding instructor currently living in San Francisco.\n\nAfter graduating from UC Berkeley in 2014 and spending a year working on community health projects in Mendocino County, I attended App Academy\'s competitive 12-week programming bootcamp for training in web development. App Academy hired me as a full-time teaching assistant directly out of the program and I have been mentoring students, delivering lectures, developing internal tools, and creating curriculum since.\n\nMy skillset includes Ruby, Rails, Javascript, React, Flux, Redux, RSPec, Capybara, Jasmine, and Jest. I\'ve been trained in object-oriented design patterns, Test Driven Development, and responsive design. I am well-practiced in working with new code bases and enjoy writing tests for React and Rails applications.\n\nI would love to work with your community organization or local business to create a beautiful web application. See below for samples of my work.',
 	  teaching: 'I am currently a Teaching Assistant at App Academy\'s programming bootcamp. I\'ve lectured to groups of students on topics including Object Oriented Design, Ruby on Rails, React/Flux, CSS, and RSpec/Capybara. I\'ve mentored hundreds of students through App Academy\'s intensive course and helped them understand new concepts and debug their code along the way.\n\nI have also volunteered at RailsBridge Workshops and spoken at Women Who Code events in San Francisco. I am passionate about making coding accessible to new students, and especially enjoy working in environments whose aim is to increase diversity in tech.\n\nIf you are looking for a speaker for your event, please do not hesitate to reach out. I love giving presentations to beginners and am happy to teach about Ruby, Rails, TDD, React/Flux, and more.\n  ',
 	  project1: 'A handspun framework in the style of Rails.',
-	  project2: 'this is info about project 2',
-	  project3: 'this is info about project 3',
-	  project4: 'this is info about project 4'
+	  project2: 'A fruit foraging app built on Rails with a React/Redux frontend.',
+	  project3: 'A simple live chat app written in Node using socket.io.',
+	  project4: 'A simple game of snake written using the jQuery library.'
 	};
 
 /***/ },
@@ -23543,7 +23543,7 @@
 	    }
 	  },
 	  componentWillUnmount: function componentWillUnmount() {
-	    this.arrestInterval;
+	    this.arrestInterval();
 	  },
 	  onRightArrow: function onRightArrow() {
 	    this.setState({ focused: (this.state.focused + 1) % 4 });
@@ -23607,51 +23607,116 @@
 	            ),
 	            React.createElement(
 	              'div',
-	              { className: 'project' },
+	              { className: 'project project-2' },
 	              React.createElement(
 	                'div',
 	                { className: 'project-overlay' },
-	                sampleText.project2
+	                React.createElement(
+	                  'h1',
+	                  null,
+	                  'Harvst'
+	                ),
+	                React.createElement(
+	                  'p',
+	                  null,
+	                  sampleText.project2
+	                ),
+	                React.createElement(
+	                  'div',
+	                  null,
+	                  React.createElement(
+	                    'a',
+	                    { href: 'https://github.com/brookeangel/Harvest', alt: 'Github', target: '_blank' },
+	                    React.createElement('i', { className: 'fa fa-github fa-4x', 'aria-hidden': 'true' })
+	                  ),
+	                  React.createElement(
+	                    'a',
+	                    { href: 'http://www.harvst.xyz/', alt: 'See it live!', target: '_blank' },
+	                    React.createElement('i', { className: 'fa fa-external-link fa-4x', 'aria-hidden': 'true' })
+	                  )
+	                )
 	              )
 	            ),
 	            React.createElement(
 	              'div',
-	              { className: 'project' },
+	              { className: 'project project-3' },
 	              React.createElement(
 	                'div',
 	                { className: 'project-overlay' },
-	                sampleText.project3
+	                React.createElement(
+	                  'h1',
+	                  null,
+	                  'Chitty Chat'
+	                ),
+	                React.createElement(
+	                  'p',
+	                  null,
+	                  sampleText.project3
+	                ),
+	                React.createElement(
+	                  'div',
+	                  null,
+	                  React.createElement(
+	                    'a',
+	                    { href: 'https://github.com/brookeangel/chitty_chat', alt: 'Github', target: '_blank' },
+	                    React.createElement('i', { className: 'fa fa-github fa-4x', 'aria-hidden': 'true' })
+	                  )
+	                )
 	              )
 	            ),
 	            React.createElement(
 	              'div',
-	              { className: 'project' },
+	              { className: 'project project-4' },
 	              React.createElement(
 	                'div',
 	                { className: 'project-overlay' },
-	                sampleText.project4
+	                React.createElement(
+	                  'h1',
+	                  null,
+	                  'Jquery Snake'
+	                ),
+	                React.createElement(
+	                  'p',
+	                  null,
+	                  sampleText.project4
+	                ),
+	                React.createElement(
+	                  'div',
+	                  null,
+	                  React.createElement(
+	                    'a',
+	                    { href: 'https://github.com/brookeangel/jquery_snake', alt: 'Github', target: '_blank' },
+	                    React.createElement('i', { className: 'fa fa-github fa-4x', 'aria-hidden': 'true' })
+	                  ),
+	                  React.createElement(
+	                    'a',
+	                    { href: 'http://brookeangel.github.io/jquery_snake/', alt: 'See it live!', target: '_blank' },
+	                    React.createElement('i', { className: 'fa fa-external-link fa-4x', 'aria-hidden': 'true' })
+	                  )
+	                )
 	              )
 	            )
 	          )
 	        ),
-	        React.createElement('i', { className: 'fa fa-chevron-right fa-4x mobile-disappear', onClick: this.onRightArrow })
+	        React.createElement('i', { className: 'fa fa-chevron-right fa-4x mobile-disappear',
+	          onClick: this.onRightArrow })
 	      ),
 	      React.createElement(
 	        'div',
 	        { className: 'project-nav mobile-disappear' },
-	        React.createElement('div', { className: this.state.focused == 0 ? 'project-nav-button active' : 'project-nav-button',
+	        React.createElement('div', { className: this.state.focused === 0 ? 'project-nav-button active' : 'project-nav-button',
 	          onClick: function onClick() {
 	            return _this3.setState({ focused: 0 });
 	          } }),
-	        React.createElement('div', { className: this.state.focused == 1 ? 'project-nav-button active' : 'project-nav-button',
+	        React.createElement('div', { className: this.state.focused === 1 ? 'project-nav-button active' : 'project-nav-button',
 	          onClick: function onClick() {
 	            return _this3.setState({ focused: 1 });
 	          } }),
-	        React.createElement('div', { className: this.state.focused == 2 ? 'project-nav-button active' : 'project-nav-button',
+	        React.createElement('div', { className: this.state.focused === 2 ? 'project-nav-button active' : 'project-nav-button',
 	          onClick: function onClick() {
 	            return _this3.setState({ focused: 2 });
 	          } }),
-	        React.createElement('div', { className: this.state.focused == 3 ? 'project-nav-button active' : 'project-nav-button',
+	        React.createElement('div', { className: this.state.focused === 3 ? 'project-nav-button active' : 'project-nav-button',
 	          onClick: function onClick() {
 	            return _this3.setState({ focused: 3 });
 	          } })

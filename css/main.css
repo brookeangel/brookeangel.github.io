@@ -332,6 +332,18 @@ a {
   background-image: url('../assets/images/miniframe-router.png');
 }
 
+.project-2 {
+  background-image: url('../assets/images/harvst.png');
+}
+
+.project-3 {
+  background-image: url('../assets/images/chitty-chat.png');
+}
+
+.project-4 {
+  background-image: url('../assets/images/jquery-snake.png');
+}
+
 .project-nav {
   display: flex;
   width: 300px;

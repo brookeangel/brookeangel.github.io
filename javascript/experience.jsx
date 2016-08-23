@@ -22,13 +22,13 @@ module.exports = React.createClass({
       return (
         <pre className="experience-content">
           <center className="icons">
-            <img src="../assets/icons/git.png" />
-            <img src="../assets/icons/github.png" />
-            <img src="../assets/icons/rails.png" />
-            <img src="../assets/icons/javascript.png" />
-            <img src="../assets/icons/html5.png" />
-            <img src="../assets/icons/css3.png" />
-            <img src="../assets/icons/react.png" /><br />
+            <img src="assets/icons/git.png" />
+            <img src="assets/icons/github.png" />
+            <img src="assets/icons/rails.png" />
+            <img src="assets/icons/javascript.png" />
+            <img src="assets/icons/html5.png" />
+            <img src="assets/icons/css3.png" />
+            <img src="assets/icons/react.png" /><br />
             <strong>Version Control Systems | </strong> Git / Github<br /><br />
             <strong>JavaScript | </strong> JavaScript, React.js, Flux, Redux, Node.js<br /><br />
             <strong>Ruby | </strong> Ruby, Rails <br /><br />
@@ -89,7 +89,7 @@ module.exports = React.createClass({
           <i className="fa fa-times-circle fa-2x" aria-hidden="true"></i>
         </div>
         <div className="modal-content">
-          <img className="resume" src="/assets/images/BrookeAngel.png"/>
+          <img className="resume" src="assets/images/BrookeAngel.png"/>
         </div>
       </Modal>);
   },

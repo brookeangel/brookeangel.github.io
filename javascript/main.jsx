@@ -51,7 +51,7 @@ const App = React.createClass({
   render () {
     return(
       <main>
-        <MainNav mainLogoClick={() => {this.scrollTo(0)}} />
+        <MainNav mainLogoClick={() => this.scrollTo(0)} />
         <PointNav setScrollState={this.setScrollInterval}
                   scrollState={this.state.scrollState}/>
         <div>
@@ -59,10 +59,10 @@ const App = React.createClass({
           <div className="main-banner-overlay"></div>
           <div className="main-description">
             <h1>BROOKE ANGEL</h1>
-            <h3>Fullstack web developer and Rails instructor.</h3>
+            <h3>Web developer and Rails/Javascript instructor.</h3>
           </div>
           <div className="down-arrow"
-                onClick={() => {this.scrollTo(1)}}>
+                onClick={() => this.scrollTo(1)}>
             <a><i className="fa fa-arrow-circle-down fa-4x"></i></a>
           </div>
         </section>
@@ -76,11 +76,11 @@ const App = React.createClass({
         </section>
 
         <section id="contact">
-          <Contact upArrowClick={() => {this.scrollTo(0)}}/>
+          <Contact upArrowClick={() => this.scrollTo(0)}/>
         </section>
         </div>
       </main>
-    )
+    );
   }
 });
 
