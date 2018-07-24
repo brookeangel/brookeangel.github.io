@@ -1,12 +1,22 @@
 # Brooke's Website
 
-## How to build and run it!
+## Build stuff locally!
 
-Install the packages and start the server:
-
+Download packages:
 ```
-> npm install && npm start
+> npm install
 ```
 
-Check out your work at `localhost:8080`!
+Build it:
+```
+> npm run-script build
+```
 
+## Run it!
+
+Start the server:
+```
+> npm start
+```
+
+Check it out at `localhost:8080`!
