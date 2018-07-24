@@ -57,7 +57,7 @@ module.exports = React.createClass({
                   style={this.getSliderStyle()}>
               <div className="project project-1">
                 <div className="project-overlay">
-                  <h1>Miniframe</h1>
+                  <h1>Miniframe (2016)</h1>
                   <p>{sampleText.project1}</p>
                   <div>
                     <a href="https://github.com/brookeangel/railslite" alt="Github" target="_blank">
@@ -71,7 +71,7 @@ module.exports = React.createClass({
               </div>
               <div className="project project-2">
                 <div className="project-overlay">
-                  <h1>Harvst</h1>
+                  <h1>Harvst (2015)</h1>
                   <p>{sampleText.project2}</p>
                   <div>
                     <a href="https://github.com/brookeangel/Harvest" alt="Github" target="_blank">
@@ -85,7 +85,7 @@ module.exports = React.createClass({
               </div>
               <div className="project project-3">
                 <div className="project-overlay">
-                  <h1>Chitty Chat</h1>
+                  <h1>Chitty Chat (2016)</h1>
                   <p>{sampleText.project3}</p>
                   <div>
                     <a href="https://github.com/brookeangel/chitty_chat" alt="Github" target="_blank">
@@ -96,7 +96,7 @@ module.exports = React.createClass({
               </div>
               <div className="project project-4">
                 <div className="project-overlay">
-                  <h1>Jquery Snake</h1>
+                  <h1>Jquery Snake (2016)</h1>
                   <p>{sampleText.project4}</p>
                   <div>
                     <a href="https://github.com/brookeangel/jquery_snake" alt="Github" target="_blank">
