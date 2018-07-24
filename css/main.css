@@ -1,7 +1,7 @@
 /* Reset */
 
 html, body, section, article,
-h1, h2, h3, p, strong, em, a, ul, main, nav {
+h1, h2, h3, p, strong, em, a, ul, main, nav, div {
   margin: 0;
   border: 0;
   padding: 0;
@@ -532,7 +532,7 @@ a {
     display: inline-block;
     border-radius: 0px;
     width: 100%;
-    height: 30px;
+    height: 40px;
     min-height: 0px;
     max-height: none;
     min-width: none;
@@ -569,7 +569,7 @@ a {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 30px;
+    height: 40px;
     border: 5px solid #8B0000;
     font-weight: 700;
     color: #8B0000;
