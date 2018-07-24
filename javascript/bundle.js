@@ -23838,9 +23838,9 @@
 	        ),
 	        React.createElement(
 	          "a",
-	          { href: "http://brookecodes.tumblr.com/",
+	          { href: "https://okiminterested.wordpress.com",
 	            target: "_blank" },
-	          React.createElement("i", { className: "fa fa-tumblr fa-2x" })
+	          React.createElement("i", { className: "fa fa-wordpress fa-2x" })
 	        )
 	      )
 	    );
@@ -23945,6 +23945,7 @@
 	        React.createElement(
 	          'center',
 	          { className: 'icons' },
+	          React.createElement('img', { src: 'assets/icons/elm.png' }),
 	          React.createElement('img', { src: 'assets/icons/git.png' }),
 	          React.createElement('img', { src: 'assets/icons/github.png' }),
 	          React.createElement('img', { src: 'assets/icons/rails.png' }),
@@ -23952,6 +23953,22 @@
 	          React.createElement('img', { src: 'assets/icons/html5.png' }),
 	          React.createElement('img', { src: 'assets/icons/css3.png' }),
 	          React.createElement('img', { src: 'assets/icons/react.png' }),
+	          React.createElement('br', null),
+	          React.createElement(
+	            'strong',
+	            null,
+	            'Frontend | '
+	          ),
+	          ' Elm, JavaScript, React.js, Flux, Redux, Node.js',
+	          React.createElement('br', null),
+	          React.createElement('br', null),
+	          React.createElement(
+	            'strong',
+	            null,
+	            'Backend | '
+	          ),
+	          ' Ruby, Rails ',
+	          React.createElement('br', null),
 	          React.createElement('br', null),
 	          React.createElement(
 	            'strong',
@@ -23964,25 +23981,9 @@
 	          React.createElement(
 	            'strong',
 	            null,
-	            'JavaScript | '
-	          ),
-	          ' JavaScript, React.js, Flux, Redux, Node.js',
-	          React.createElement('br', null),
-	          React.createElement('br', null),
-	          React.createElement(
-	            'strong',
-	            null,
-	            'Ruby | '
-	          ),
-	          ' Ruby, Rails ',
-	          React.createElement('br', null),
-	          React.createElement('br', null),
-	          React.createElement(
-	            'strong',
-	            null,
 	            'Testing Frameworks |'
 	          ),
-	          ' RSpec, Capybara, Jest, Jasmine, Mocha',
+	          ' RSpec, Capybara, Jest, Jasmine, Mocha, ElmTest',
 	          React.createElement('br', null),
 	          React.createElement('br', null),
 	          React.createElement(
@@ -23990,7 +23991,7 @@
 	            null,
 	            'Web Design |'
 	          ),
-	          ' CSS3, HTML5',
+	          ' CSS3, Elm Css, HTML5',
 	          React.createElement('br', null),
 	          React.createElement('br', null),
 	          React.createElement(
@@ -24080,6 +24081,7 @@
 	        React.createElement(
 	          'div',
 	          { className: "circle " + this.isActive('summary'),
+	            id: "summary-button",
 	            onClick: function onClick() {
 	              return _this2.setActive('summary');
 	            } },
@@ -24092,6 +24094,7 @@
 	        React.createElement(
 	          'div',
 	          { className: "circle " + this.isActive('resume'),
+	            id: "resume-button",
 	            onClick: function onClick() {
 	              return _this2.setActive('resume');
 	            } },
@@ -24104,6 +24107,7 @@
 	        React.createElement(
 	          'div',
 	          { className: "circle " + this.isActive('teaching'),
+	            id: "teaching-button",
 	            onClick: function onClick() {
 	              return _this2.setActive('teaching');
 	            } },
@@ -24116,6 +24120,7 @@
 	        React.createElement(
 	          'div',
 	          { className: "circle " + this.isActive('technologies'),
+	            id: "technologies-button",
 	            onClick: function onClick() {
 	              return _this2.setActive('technologies');
 	            } },
@@ -24138,8 +24143,8 @@
 	'use strict';
 	
 	module.exports = {
-	  summary: 'I am a web developer and coding instructor currently living in San Francisco.\n\nAfter graduating from UC Berkeley in 2014 and spending a year working on community health projects in Mendocino County, I attended App Academy\'s competitive 12-week programming bootcamp for training in web development. App Academy hired me as a full-time teaching assistant directly out of the program and I have been mentoring students, delivering lectures, developing internal tools, and creating curriculum since.\n\nMy skillset includes Ruby, Rails, Javascript, React, Flux, Redux, RSPec, Capybara, Jasmine, and Jest. I\'ve been trained in object-oriented design patterns, Test Driven Development, and responsive design. I am well-practiced in working with new code bases and enjoy writing tests for React and Rails applications.\n\nI would love to work with your community organization or local business to create a beautiful web application. See below for samples of my work.',
-	  teaching: 'I am currently a Teaching Assistant at App Academy\'s programming bootcamp. I\'ve lectured to groups of students on topics including Object Oriented Design, Ruby on Rails, React/Flux, CSS, and RSpec/Capybara. I\'ve mentored hundreds of students through App Academy\'s intensive course and helped them understand new concepts and debug their code along the way.\n\nI have also volunteered at RailsBridge Workshops and spoken at Women Who Code events in San Francisco. I am passionate about making coding accessible to new students, and especially enjoy working in environments whose aim is to increase diversity in tech.\n\nIf you are looking for a speaker for your event, please do not hesitate to reach out. I love giving presentations to beginners and am happy to teach about Ruby, Rails, TDD, React/Flux, and more.\n  ',
+	  summary: '\nBrooke is a Software Engineer based in Berkeley California.\n\nCurrently, she works as a Team Lead at NoRedInk where she builds beautiful tools to help students become better writers. She mostly codes in Elm (a functional language that compiles to JavaScript) and Rails, but every so often, she encounters a bit of JavaScript, Elixir, and Haskell.\n\nIn a past lives, Brooke has been:\n\n  - A neurobiology student at UC Berkeley, where she learned about the wonders of the human brain and became an advocate for coops and sustainability! \n\n  - A board member of the Berkeley Student Food Collective, where she ran a course educating UC Berkeley students about sustainable food systems!\n\n  - An intern with the non-profit clinic Primeros Pasos in Xela, Guatemala, where she compiled data on the organization\u2019s impact in the community and wrote its yearly impact report!\n\n  - An Americorps Member in Boonville, California, where she ran a teen clinic, taught inclusive and empowering health classes to students, and ran weekly healthy cooking and language exchanges for the community!\n\n  - A student and instructor at App Academy, an immersive 12-week programming bootcamp that taught Rails and React!\n\nIn her free time, Brooke enjoys riding her bicycle Pebble around the Bay Area, building furniture with tools borrowed from the Berkeley Tool Library, cooking vegan dinners for her coop, and sewing various articles of clothing that never seem to fit quite right.\n\nShe also enjoys volunteering for organizations that promote diversity in tech. She has written curriculum for Tectonica, taught with Railsbridge, spoken about TDD at Women Who Code, and run a day-long workshop with ElmBridge!\n  ',
+	  teaching: 'I would love to volunteer as a coding instructor or speaker at your community-based event!\n\nBefore working as a Software Engineer, I worked as a Teaching Assistant at App Academy\'s programming bootcamp. I\'ve lectured to groups of students on topics including Object Oriented Design, Ruby on Rails, React/Flux, CSS, and RSpec/Capybara. I\'ve mentored hundreds of students through App Academy\'s intensive course and helped them understand new concepts and debug their code along the way.\n\nI have also volunteered at RailsBridge Workshops and spoken at Women Who Code events in San Francisco. I am passionate about making coding accessible to new students, and especially enjoy working with organizations whose aim is to increase diversity in tech.\n\nIf you are looking for a speaker or instructor for your event, please do not hesitate to reach out. I love giving presentations to beginners and am happy to teach about Elm, Ruby, Rails, TDD, and more.\n  ',
 	  project1: 'A handspun framework in the style of Rails.',
 	  project2: 'A fruit foraging app built on Rails with a React/Redux frontend.',
 	  project3: 'A simple live chat app written in Node using socket.io.',
@@ -24206,6 +24211,11 @@
 	      null,
 	      React.createElement(
 	        'div',
+	        { className: 'project-header' },
+	        'PROJECTS'
+	      ),
+	      React.createElement(
+	        'div',
 	        { className: 'project-container-container' },
 	        React.createElement('i', { className: 'fa fa-chevron-left fa-4x mobile-disappear', onClick: this.onLeftArrow }),
 	        React.createElement(
@@ -24226,7 +24236,7 @@
 	                React.createElement(
 	                  'h1',
 	                  null,
-	                  'Miniframe'
+	                  'Miniframe (2016)'
 	                ),
 	                React.createElement(
 	                  'p',
@@ -24258,7 +24268,7 @@
 	                React.createElement(
 	                  'h1',
 	                  null,
-	                  'Harvst'
+	                  'Harvst (2015)'
 	                ),
 	                React.createElement(
 	                  'p',
@@ -24290,7 +24300,7 @@
 	                React.createElement(
 	                  'h1',
 	                  null,
-	                  'Chitty Chat'
+	                  'Chitty Chat (2016)'
 	                ),
 	                React.createElement(
 	                  'p',
@@ -24317,7 +24327,7 @@
 	                React.createElement(
 	                  'h1',
 	                  null,
-	                  'Jquery Snake'
+	                  'Jquery Snake (2016)'
 	                ),
 	                React.createElement(
 	                  'p',
@@ -24407,15 +24417,6 @@
 	            'I\'d love to write code for your community project or organization.',
 	            React.createElement('br', null),
 	            'Don\'t hesitate to reach out.',
-	            React.createElement('br', null),
-	            React.createElement('br', null),
-	            'Photographs by ',
-	            React.createElement(
-	              'strong',
-	              null,
-	              'Danielle Barge'
-	            ),
-	            '.',
 	            React.createElement('br', null),
 	            React.createElement('br', null),
 	            'Site written by ',
