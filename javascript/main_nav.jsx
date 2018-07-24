@@ -16,9 +16,9 @@ module.exports = React.createClass({
             target="_blank">
             <i className="fa fa-github fa-2x"></i>
           </a>
-          <a href="http://brookecodes.tumblr.com/"
+          <a href="https://okiminterested.wordpress.com"
             target="_blank">
-            <i className="fa fa-tumblr fa-2x"></i>
+            <i className="fa fa-wordpress fa-2x"></i>
           </a>
         </div>
       </nav>
