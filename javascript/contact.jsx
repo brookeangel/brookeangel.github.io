@@ -15,8 +15,6 @@ module.exports = React.createClass({
               <br />
               Don't hesitate to reach out.
               <br /><br />
-              Photographs by <strong>Danielle Barge</strong>.
-              <br /><br />
               Site written by <strong>Brooke Angel</strong> using <strong>React.js</strong>.
             </p>
           </div>
