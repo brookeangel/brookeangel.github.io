@@ -78,7 +78,7 @@ module.exports = React.createClass({
                     <a href="https://github.com/brookeangel/Harvest" alt="Github" target="_blank">
                       <i className="fa fa-github fa-4x" aria-hidden="true"></i>
                     </a>
-                    <a href="http://www.harvst.xyz/" alt="See it live!" target="_blank">
+                    <a href="http://harvst.herokuapp.com" alt="See it live!" target="_blank">
                       <i className="fa fa-external-link fa-4x" aria-hidden="true"></i>
                     </a>
                   </div>
