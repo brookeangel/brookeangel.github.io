@@ -1,12 +1,26 @@
 module.exports = {
   summary:
-  `I am a web developer and coding instructor currently living in San Francisco.
+  `
+Brooke is a Software Engineer based in Berkeley California.
 
-After graduating from UC Berkeley in 2014 and spending a year working on community health projects in Mendocino County, I attended App Academy's competitive 12-week programming bootcamp for training in web development. App Academy hired me as a full-time teaching assistant directly out of the program and I have been mentoring students, delivering lectures, developing internal tools, and creating curriculum since.
+Currently, she works as a Team Lead at NoRedInk where she builds beautiful tools to help students become better writers. She mostly codes in Elm (a functional language that compiles to JavaScript) and Rails, but every so often, she encounters a bit of JavaScript, Elixir, and Haskell.
 
-My skillset includes Ruby, Rails, Javascript, React, Flux, Redux, RSPec, Capybara, Jasmine, and Jest. I've been trained in object-oriented design patterns, Test Driven Development, and responsive design. I am well-practiced in working with new code bases and enjoy writing tests for React and Rails applications.
+In a past lives, Brooke has been:
 
-I would love to work with your community organization or local business to create a beautiful web application. See below for samples of my work.`,
+  - A neurobiology student at UC Berkeley, where she learned about the wonders of the human brain and became an advocate for coops and sustainability! 
+
+  - A board member of the Berkeley Student Food Collective, where she ran a course educating UC Berkeley students about sustainable food systems!
+
+  - An intern with the non-profit clinic Primeros Pasos in Xela, Guatemala, where she compiled data on the organization’s impact in the community and wrote its yearly impact report!
+
+  - An Americorps Member in Boonville, California, where she ran a teen clinic, taught inclusive and empowering health classes to students, and ran weekly healthy cooking and language exchanges for the community!
+
+  - A student and instructor at App Academy, an immersive 12-week programming bootcamp that taught Rails and React!
+
+In her free time, Brooke enjoys riding her bicycle Pebble around the Bay Area, building furniture with tools borrowed from the Berkeley Tool Library, cooking vegan dinners for her coop, and sewing various articles of clothing that never seem to fit quite right.
+
+She also enjoys volunteering for organizations that promote diversity in tech, and has written curriculum for Tectonica, taught with Railsbridge, spoken about TDD at Women Who Code, and run a day-long workshop with ElmBridge!
+  `,
   teaching:
   `I am currently a Teaching Assistant at App Academy's programming bootcamp. I've lectured to groups of students on topics including Object Oriented Design, Ruby on Rails, React/Flux, CSS, and RSpec/Capybara. I've mentored hundreds of students through App Academy's intensive course and helped them understand new concepts and debug their code along the way.
 
