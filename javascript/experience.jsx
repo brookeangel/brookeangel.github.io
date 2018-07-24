@@ -100,25 +100,29 @@ module.exports = React.createClass({
       <div className="experience">
         <div className="experience-circles">
           <div className={"circle " + this.isActive('summary')}
-                onClick={() => this.setActive('summary')}>
+            id={"summary-button"}
+            onClick={() => this.setActive('summary')}>
             <div>
               ABOUT ME
             </div>
           </div>
           <div className={"circle " + this.isActive('resume')}
-                onClick={() => this.setActive('resume')}>
+            id={"resume-button"}
+            onClick={() => this.setActive('resume')}>
             <div>
               RESUME
             </div>
           </div>
           <div className={"circle " + this.isActive('teaching')}
-                onClick={() => this.setActive('teaching')}>
+            id={"teaching-button"}
+            onClick={() => this.setActive('teaching')}>
             <div>
               TEACHING
             </div>
           </div>
           <div className={"circle " + this.isActive('technologies')}
-                onClick={() => this.setActive('technologies')}>
+            id={"technologies-button"}
+            onClick={() => this.setActive('technologies')}>
             <div>
               SKILLS
             </div>

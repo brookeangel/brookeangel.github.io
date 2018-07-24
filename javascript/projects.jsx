@@ -48,6 +48,7 @@ module.exports = React.createClass({
   render () {
     return (
       <div>
+        <div className="project-header">PROJECTS</div>
         <div className="project-container-container">
           <i className="fa fa-chevron-left fa-4x mobile-disappear" onClick={this.onLeftArrow}></i>
           <div className="project-container">
