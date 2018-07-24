@@ -252,8 +252,8 @@ a {
   height: 45vh;
   overflow-y: scroll;
   white-space: pre-wrap;
-  font: inherit;
   font-size: 20px;
+  font-family: monospace;
 }
 
 .icons img {
