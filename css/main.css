@@ -162,7 +162,7 @@ a {
 .main-banner-overlay {
   opacity: 50%;
   background-size: cover;
-  background-image: url('../assets/images/nuns.jpg');
+  background-image: url('../assets/images/poppies.jpg');
   width: 100%;
   height: calc(100% + 75px);
   position: fixed;
