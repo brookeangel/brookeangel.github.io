@@ -125,7 +125,7 @@
 	            React.createElement(
 	              'h3',
 	              null,
-	              'Web developer and Rails/Javascript instructor.'
+	              'Berkeley-based software engineer with a love for crafts, coops, and community.'
 	            )
 	          ),
 	          React.createElement(
