@@ -218,7 +218,7 @@ a {
 }
 
 .circle.active {
-  border: 5px solid rgb(0, 102, 153);
+  border: 5px solid #8B0000;
 }
 
 .circle:not(.active):hover {
@@ -236,7 +236,7 @@ a {
 
 .circle.active div {
   font-weight: 700;
-  color: rgb(0, 102, 153);
+  color: #8B0000;
 }
 
 .circle:not(.active):hover div {
@@ -365,7 +365,7 @@ a {
 }
 
 .project-nav-button:hover {
-  background-color: rgb(0, 102, 153);
+  background-color: #8B0000;
 }
 
 .project-nav-button.active {
