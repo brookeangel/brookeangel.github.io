@@ -12,11 +12,10 @@ Build it:
 > npm run-script build
 ```
 
-## Run it!
+## Open it!
 
-Start the server:
+Open it in the browser:
 ```
-> npm start
+> open index.html
 ```
 
-Check it out at `localhost:8080`!
