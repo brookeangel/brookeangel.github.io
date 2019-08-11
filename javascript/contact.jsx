@@ -9,13 +9,9 @@ module.exports = React.createClass({
         <div className="contact-box">
           <div className="profile-description">
             <h2>CONTACT ME</h2>
-            <h3>brooke.nicole.angel@gmail.com</h3>
             <p>
-              I'd love to write code for your community project or organization.
-              <br />
-              Don't hesitate to reach out.
-              <br /><br />
-              Site written by <strong>Brooke Angel</strong> using <strong>React.js</strong>.
+              Feel free to reach out to brooke.nicole.angel@gmail.com, or via
+              <a href="https://www.linkedin.com/in/brookeangel" target="blank"> LinkedIn</a>.
             </p>
           </div>
           <div className="up-arrow" onClick={this.props.upArrowClick}>

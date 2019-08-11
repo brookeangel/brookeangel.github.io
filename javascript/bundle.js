@@ -24273,29 +24273,13 @@
 	            'CONTACT ME'
 	          ),
 	          React.createElement(
-	            'h3',
-	            null,
-	            'brooke.nicole.angel@gmail.com'
-	          ),
-	          React.createElement(
 	            'p',
 	            null,
-	            'I\'d love to write code for your community project or organization.',
-	            React.createElement('br', null),
-	            'Don\'t hesitate to reach out.',
-	            React.createElement('br', null),
-	            React.createElement('br', null),
-	            'Site written by ',
+	            'Feel free to reach out to brooke.nicole.angel@gmail.com, or via',
 	            React.createElement(
-	              'strong',
-	              null,
-	              'Brooke Angel'
-	            ),
-	            ' using ',
-	            React.createElement(
-	              'strong',
-	              null,
-	              'React.js'
+	              'a',
+	              { href: 'https://www.linkedin.com/in/brookeangel', target: 'blank' },
+	              ' LinkedIn'
 	            ),
 	            '.'
 	          )
