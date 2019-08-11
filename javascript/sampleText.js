@@ -30,8 +30,4 @@ I have also volunteered at RailsBridge Workshops and spoken at Women Who Code ev
 
 If you are looking for a speaker or instructor for your event, please do not hesitate to reach out. I love giving presentations to beginners and am happy to teach about Elm, Ruby, Rails, TDD, and more.
   `,
-  project1: 'A handspun framework in the style of Rails.',
-  project2: 'A fruit foraging app built on Rails with a React/Redux frontend.',
-  project3: 'A simple live chat app written in Node using socket.io.',
-  project4: 'A simple game of snake written using the jQuery library.'
 };

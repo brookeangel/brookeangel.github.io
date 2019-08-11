@@ -4,7 +4,6 @@ const Modal = require('react-modal');
 const MainNav = require('./main_nav');
 const PointNav = require('./point_nav');
 const Experience = require('./experience');
-const Projects = require('./projects');
 const Contact = require('./contact');
 
 const App = React.createClass({
@@ -69,10 +68,6 @@ const App = React.createClass({
 
         <section id="experience">
           <Experience />
-        </section>
-
-        <section id="projects">
-          <Projects />
         </section>
 
         <section id="contact">

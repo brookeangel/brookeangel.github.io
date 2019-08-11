@@ -19,12 +19,6 @@ module.exports = React.createClass({
           </a>
 
           <a onClick={this.props.setScrollState}
-            className={this.props.scrollState == 2 ? 'active' : ''}>
-            <i className="fa fa-code fa-2x"></i>
-            <p>Projects</p>
-          </a>
-
-          <a onClick={this.props.setScrollState}
             className={this.props.scrollState == 3 ? 'active' : ''}>
             <i className="fa fa-info fa-2x"></i>
             <p>Contact</p>
