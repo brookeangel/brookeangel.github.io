@@ -16,10 +16,6 @@ module.exports = React.createClass({
             target="_blank">
             <i className="fa fa-github fa-2x"></i>
           </a>
-          <a href="https://okiminterested.wordpress.com"
-            target="_blank">
-            <i className="fa fa-wordpress fa-2x"></i>
-          </a>
         </div>
       </nav>
     );

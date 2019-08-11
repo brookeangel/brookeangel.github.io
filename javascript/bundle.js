@@ -24146,12 +24146,6 @@
 	          { href: "https://github.com/brookeangel",
 	            target: "_blank" },
 	          React.createElement("i", { className: "fa fa-github fa-2x" })
-	        ),
-	        React.createElement(
-	          "a",
-	          { href: "https://okiminterested.wordpress.com",
-	            target: "_blank" },
-	          React.createElement("i", { className: "fa fa-wordpress fa-2x" })
 	        )
 	      )
 	    );
