@@ -3,7 +3,7 @@ module.exports = {
   `
 Brooke is a Software Engineer based in Berkeley California.
 
-Currently, she works as a Team Lead at NoRedInk where she builds beautiful tools to help students become better writers. She mostly codes in Elm (a functional language that compiles to JavaScript) and Rails, but every so often, she encounters a bit of JavaScript, Elixir, and Haskell.
+Currently, she works as a partly remote Software Engineer at NoRedInk, where she collaborates with teachers and designers to bring tools that empower educators to life using technologies including Rails, Elixir, React, Elm, SQL, Jenkins, and Terraform. She has worked with and led a team of six engineers on a diverse array of projects, ranging from automating deployment pipelines to developing complex UIs, and have pushed for clean code, documented process, strong test coverage, and accessibility at every stop.
 
 In a past lives, Brooke has been:
 
