@@ -21,13 +21,4 @@ In her free time, Brooke enjoys riding her bicycle Pebble around the Bay Area, b
 
 She also enjoys volunteering for organizations that promote diversity in tech. She has written curriculum for Tectonica, taught with Railsbridge, spoken about TDD at Women Who Code, and run a day-long workshop with ElmBridge!
   `,
-  teaching:
-  `I would love to volunteer as a coding instructor or speaker at your community-based event!
-
-Before working as a Software Engineer, I worked as a Teaching Assistant at App Academy's programming bootcamp. I've lectured to groups of students on topics including Object Oriented Design, Ruby on Rails, React/Flux, CSS, and RSpec/Capybara. I've mentored hundreds of students through App Academy's intensive course and helped them understand new concepts and debug their code along the way.
-
-I have also volunteered at RailsBridge Workshops and spoken at Women Who Code events in San Francisco. I am passionate about making coding accessible to new students, and especially enjoy working with organizations whose aim is to increase diversity in tech.
-
-If you are looking for a speaker or instructor for your event, please do not hesitate to reach out. I love giving presentations to beginners and am happy to teach about Elm, Ruby, Rails, TDD, and more.
-  `,
 };

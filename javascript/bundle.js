@@ -52,7 +52,7 @@
 	var MainNav = __webpack_require__(202);
 	var PointNav = __webpack_require__(203);
 	var Experience = __webpack_require__(204);
-	var Contact = __webpack_require__(207);
+	var Contact = __webpack_require__(206);
 	
 	var App = React.createClass({
 	  displayName: 'App',
@@ -24221,217 +24221,22 @@
 	'use strict';
 	
 	var React = __webpack_require__(186);
-	var Modal = __webpack_require__(187);
 	var sampleText = __webpack_require__(205);
 	
 	module.exports = React.createClass({
 	  displayName: 'exports',
 	  getInitialState: function getInitialState() {
-	    return { active: 'summary' };
-	  },
-	  setActive: function setActive(category) {
-	    this.setState({ active: category });
-	  },
-	  isActive: function isActive(category) {
-	    return this.state.active === category ? 'active' : '';
-	  },
-	  activeContent: function activeContent() {
-	    if (this.state.active == 'resume') {
-	      return this.getModal();
-	    } else if (this.state.active == 'technologies') {
-	      return React.createElement(
-	        'pre',
-	        { className: 'experience-content' },
-	        React.createElement(
-	          'center',
-	          { className: 'icons' },
-	          React.createElement('img', { src: 'assets/icons/elm.png' }),
-	          React.createElement('img', { src: 'assets/icons/git.png' }),
-	          React.createElement('img', { src: 'assets/icons/github.png' }),
-	          React.createElement('img', { src: 'assets/icons/rails.png' }),
-	          React.createElement('img', { src: 'assets/icons/javascript.png' }),
-	          React.createElement('img', { src: 'assets/icons/html5.png' }),
-	          React.createElement('img', { src: 'assets/icons/css3.png' }),
-	          React.createElement('img', { src: 'assets/icons/react.png' }),
-	          React.createElement('br', null),
-	          React.createElement(
-	            'strong',
-	            null,
-	            'Frontend | '
-	          ),
-	          ' Elm, JavaScript, React.js, Flux, Redux, Node.js',
-	          React.createElement('br', null),
-	          React.createElement('br', null),
-	          React.createElement(
-	            'strong',
-	            null,
-	            'Backend | '
-	          ),
-	          ' Ruby, Rails ',
-	          React.createElement('br', null),
-	          React.createElement('br', null),
-	          React.createElement(
-	            'strong',
-	            null,
-	            'Version Control Systems | '
-	          ),
-	          ' Git / Github',
-	          React.createElement('br', null),
-	          React.createElement('br', null),
-	          React.createElement(
-	            'strong',
-	            null,
-	            'Testing Frameworks |'
-	          ),
-	          ' RSpec, Capybara, Jest, Jasmine, Mocha, ElmTest',
-	          React.createElement('br', null),
-	          React.createElement('br', null),
-	          React.createElement(
-	            'strong',
-	            null,
-	            'Web Design |'
-	          ),
-	          ' CSS3, Elm Css, HTML5',
-	          React.createElement('br', null),
-	          React.createElement('br', null),
-	          React.createElement(
-	            'strong',
-	            null,
-	            'Misc |'
-	          ),
-	          ' Java, Matlab, Scheme',
-	          React.createElement('br', null),
-	          React.createElement('br', null)
-	        )
-	      );
-	    } else {
-	      return React.createElement(
-	        'pre',
-	        { className: 'experience-content' },
-	        sampleText[this.state.active]
-	      );
-	    }
-	  },
-	  getModal: function getModal() {
-	    var _this = this;
-	
-	    var modalStyle = {
-	      overlay: {
-	        position: 'fixed',
-	        backgroundColor: 'rgba(255, 255, 255, 0.75)',
-	        zIndex: 55,
-	        display: 'flex',
-	        alignItems: 'center',
-	        justifyContent: 'center'
-	      },
-	      content: {
-	        left: 'auto',
-	        right: 'auto',
-	        padding: 0,
-	        overflowY: 'hidden',
-	        overflowX: 'hidden'
-	      }
-	    };
-	
-	    var loader = React.createElement(
-	      'div',
-	      { className: 'center-spinner' },
-	      React.createElement(
-	        'div',
-	        { className: 'spinner' },
-	        React.createElement('div', { className: 'bounce1' }),
-	        React.createElement('div', { className: 'bounce2' }),
-	        React.createElement('div', { className: 'bounce3' })
-	      )
-	    );
-	
-	    return React.createElement(
-	      Modal,
-	      {
-	        isOpen: true,
-	        style: modalStyle,
-	        onRequestClose: function onRequestClose() {
-	          return _this.setState({ active: 'summary' });
-	        }
-	      },
-	      React.createElement(
-	        'div',
-	        { className: 'x-button',
-	          onClick: function onClick() {
-	            return _this.setState({ active: 'summary' });
-	          } },
-	        React.createElement('i', { className: 'fa fa-times-circle fa-2x', 'aria-hidden': 'true' })
-	      ),
-	      React.createElement(
-	        'div',
-	        { className: 'modal-content' },
-	        React.createElement('img', { className: 'resume', src: 'assets/images/BrookeAngel.png' })
-	      )
-	    );
+	    return {};
 	  },
 	  render: function render() {
-	    var _this2 = this;
-	
 	    return React.createElement(
 	      'div',
 	      { className: 'experience' },
 	      React.createElement(
-	        'div',
-	        { className: 'experience-circles' },
-	        React.createElement(
-	          'div',
-	          { className: "circle " + this.isActive('summary'),
-	            id: "summary-button",
-	            onClick: function onClick() {
-	              return _this2.setActive('summary');
-	            } },
-	          React.createElement(
-	            'div',
-	            null,
-	            'ABOUT ME'
-	          )
-	        ),
-	        React.createElement(
-	          'div',
-	          { className: "circle " + this.isActive('resume'),
-	            id: "resume-button",
-	            onClick: function onClick() {
-	              return _this2.setActive('resume');
-	            } },
-	          React.createElement(
-	            'div',
-	            null,
-	            'RESUME'
-	          )
-	        ),
-	        React.createElement(
-	          'div',
-	          { className: "circle " + this.isActive('teaching'),
-	            id: "teaching-button",
-	            onClick: function onClick() {
-	              return _this2.setActive('teaching');
-	            } },
-	          React.createElement(
-	            'div',
-	            null,
-	            'TEACHING'
-	          )
-	        ),
-	        React.createElement(
-	          'div',
-	          { className: "circle " + this.isActive('technologies'),
-	            id: "technologies-button",
-	            onClick: function onClick() {
-	              return _this2.setActive('technologies');
-	            } },
-	          React.createElement(
-	            'div',
-	            null,
-	            'SKILLS'
-	          )
-	        )
-	      ),
-	      this.activeContent()
+	        'pre',
+	        null,
+	        sampleText['summary']
+	      )
 	    );
 	  }
 	});
@@ -24443,13 +24248,11 @@
 	"use strict";
 	
 	module.exports = {
-	  summary: "\nBrooke is a Software Engineer based in Berkeley California.\n\nCurrently, she works as a Team Lead at NoRedInk where she builds beautiful tools to help students become better writers. She mostly codes in Elm (a functional language that compiles to JavaScript) and Rails, but every so often, she encounters a bit of JavaScript, Elixir, and Haskell.\n\nIn a past lives, Brooke has been:\n\n  - A neurobiology student at UC Berkeley, where she learned about the wonders of the human brain and became an advocate for coops and sustainability! \n\n  - A board member of the Berkeley Student Food Collective, where she ran a course educating UC Berkeley students about sustainable food systems!\n\n  - An intern with the non-profit clinic Primeros Pasos in Xela, Guatemala, where she compiled data on the organization\u2019s impact in the community and wrote its yearly impact report!\n\n  - An Americorps Member in Boonville, California, where she ran a teen clinic, taught inclusive and empowering health classes to students, and ran weekly healthy cooking and language exchanges for the community!\n\n  - A student and instructor at App Academy, an immersive 12-week programming bootcamp that taught Rails and React!\n\nIn her free time, Brooke enjoys riding her bicycle Pebble around the Bay Area, building furniture with tools borrowed from the Berkeley Tool Library, cooking vegan dinners for her coop, and sewing various articles of clothing that never seem to fit quite right.\n\nShe also enjoys volunteering for organizations that promote diversity in tech. She has written curriculum for Tectonica, taught with Railsbridge, spoken about TDD at Women Who Code, and run a day-long workshop with ElmBridge!\n  ",
-	  teaching: "I would love to volunteer as a coding instructor or speaker at your community-based event!\n\nBefore working as a Software Engineer, I worked as a Teaching Assistant at App Academy's programming bootcamp. I've lectured to groups of students on topics including Object Oriented Design, Ruby on Rails, React/Flux, CSS, and RSpec/Capybara. I've mentored hundreds of students through App Academy's intensive course and helped them understand new concepts and debug their code along the way.\n\nI have also volunteered at RailsBridge Workshops and spoken at Women Who Code events in San Francisco. I am passionate about making coding accessible to new students, and especially enjoy working with organizations whose aim is to increase diversity in tech.\n\nIf you are looking for a speaker or instructor for your event, please do not hesitate to reach out. I love giving presentations to beginners and am happy to teach about Elm, Ruby, Rails, TDD, and more.\n  "
+	  summary: "\nBrooke is a Software Engineer based in Berkeley California.\n\nCurrently, she works as a Team Lead at NoRedInk where she builds beautiful tools to help students become better writers. She mostly codes in Elm (a functional language that compiles to JavaScript) and Rails, but every so often, she encounters a bit of JavaScript, Elixir, and Haskell.\n\nIn a past lives, Brooke has been:\n\n  - A neurobiology student at UC Berkeley, where she learned about the wonders of the human brain and became an advocate for coops and sustainability! \n\n  - A board member of the Berkeley Student Food Collective, where she ran a course educating UC Berkeley students about sustainable food systems!\n\n  - An intern with the non-profit clinic Primeros Pasos in Xela, Guatemala, where she compiled data on the organization\u2019s impact in the community and wrote its yearly impact report!\n\n  - An Americorps Member in Boonville, California, where she ran a teen clinic, taught inclusive and empowering health classes to students, and ran weekly healthy cooking and language exchanges for the community!\n\n  - A student and instructor at App Academy, an immersive 12-week programming bootcamp that taught Rails and React!\n\nIn her free time, Brooke enjoys riding her bicycle Pebble around the Bay Area, building furniture with tools borrowed from the Berkeley Tool Library, cooking vegan dinners for her coop, and sewing various articles of clothing that never seem to fit quite right.\n\nShe also enjoys volunteering for organizations that promote diversity in tech. She has written curriculum for Tectonica, taught with Railsbridge, spoken about TDD at Women Who Code, and run a day-long workshop with ElmBridge!\n  "
 	};
 
 /***/ }),
-/* 206 */,
-/* 207 */
+/* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
